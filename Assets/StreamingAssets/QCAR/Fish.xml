@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="fish_step_4_16" size="500.000000 404.000000" />
+    <ImageTarget name="fish_step_4_15" size="500.000000 445.000000" />
+    <ImageTarget name="fish_step_4_14" size="500.000000 371.000000" />
+    <ImageTarget name="fish_step_4_13" size="500.000000 433.000000" />
+    <ImageTarget name="fish_step_4_11" size="500.000000 420.000000" />
+    <ImageTarget name="fish_step_4_12" size="500.000000 430.000000" />
+    <ImageTarget name="fish_step_4_10" size="500.000000 411.000000" />
+    <ImageTarget name="fish_step_4_9" size="500.000000 403.000000" />
+    <ImageTarget name="fish_step_4_8" size="500.000000 446.000000" />
+    <ImageTarget name="fish_step_4_7" size="500.000000 438.000000" />
+    <ImageTarget name="fish_step_4_6" size="500.000000 440.000000" />
+    <ImageTarget name="fish_step_4_5" size="500.000000 441.000000" />
+    <ImageTarget name="fish_step_4_4" size="500.000000 381.000000" />
+    <ImageTarget name="fish_step_4_3" size="500.000000 383.000000" />
+    <ImageTarget name="fish_step_4_2" size="500.000000 431.000000" />
+    <ImageTarget name="fish_step_4_1" size="500.000000 431.000000" />
+    <ImageTarget name="fish_step_3_16" size="500.000000 206.000000" />
+    <ImageTarget name="fish_step_3_15" size="500.000000 190.000000" />
+    <ImageTarget name="fish_step_3_14" size="500.000000 182.000000" />
+    <ImageTarget name="fish_step_3_13" size="500.000000 187.000000" />
+    <ImageTarget name="fish_step_3_12" size="500.000000 186.000000" />
+    <ImageTarget name="fish_step_3_11" size="500.000000 193.000000" />
+    <ImageTarget name="fish_step_3_10" size="500.000000 178.000000" />
+    <ImageTarget name="fish_step_3_8" size="500.000000 171.000000" />
+    <ImageTarget name="fish_step_3_7" size="500.000000 182.000000" />
+    <ImageTarget name="fish_step_3_9" size="500.000000 189.000000" />
+    <ImageTarget name="fish_step_3_6" size="500.000000 187.000000" />
+    <ImageTarget name="fish_step_3_5" size="500.000000 184.000000" />
+    <ImageTarget name="fish_step_3_4" size="500.000000 196.000000" />
+    <ImageTarget name="fish_step_3_3" size="500.000000 188.000000" />
+    <ImageTarget name="fish_step_3_2" size="500.000000 189.000000" />
+    <ImageTarget name="fish_step_3_1" size="500.000000 178.000000" />
+    <ImageTarget name="fish_step_2_8" size="500.000000 315.000000" />
+    <ImageTarget name="fish_step_2_7" size="500.000000 302.000000" />
+    <ImageTarget name="fish_step_2_6" size="500.000000 322.000000" />
+    <ImageTarget name="fish_step_2_5" size="500.000000 327.000000" />
+    <ImageTarget name="fish_step_2_4" size="500.000000 302.000000" />
+    <ImageTarget name="fish_step_2_2" size="500.000000 353.000000" />
+    <ImageTarget name="fish_step_2_3" size="500.000000 322.000000" />
+    <ImageTarget name="fish_step_2_1" size="500.000000 304.000000" />
+    <ImageTarget name="fish_step_1_8" size="500.000000 576.000000" />
+    <ImageTarget name="fish_step_1_7" size="500.000000 549.000000" />
+    <ImageTarget name="fish_step_1_6" size="500.000000 575.000000" />
+    <ImageTarget name="fish_step_1_5" size="500.000000 558.000000" />
+    <ImageTarget name="fish_step_1_4" size="500.000000 584.000000" />
+    <ImageTarget name="fish_step_1_2" size="500.000000 580.000000" />
+    <ImageTarget name="fish_step_1_3" size="500.000000 538.000000" />
+    <ImageTarget name="fish_step_1_1" size="500.000000 585.000000" />
+  </Tracking>
+</QCARConfig>
