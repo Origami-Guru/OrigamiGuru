@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{6298928E-CF8C-1A14-0489-08EBCD0AEF08}</ProjectGuid>
+	<ProjectGuid>{5A0769DA-25DA-A68D-BA58-6ED404CB536B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -64,7 +64,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
      <None Include="Assets\StreamingAssets\QCAR\unity.txt" />
  <Reference Include="Assembly-UnityScript-Editor-firstpass">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
@@ -73,22 +73,22 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions.Editor">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Editor/QCAR/Scripts/Qualcomm.Vuforia.UnityExtensions.Editor.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Editor/QCAR/Scripts/Qualcomm.Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Plugins/Mono.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.SqliteClient">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
- <HintPath>/Users/gatukgl/Workspace/Origami Guru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>/Users/gatukgl/New Unity Project/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{4DBBB8D1-6EE3-8430-817D-F99B26C1FB66}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+      <Project>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
