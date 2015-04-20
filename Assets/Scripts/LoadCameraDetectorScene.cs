@@ -8,7 +8,6 @@ public class LoadCameraDetectorScene : MonoBehaviour {
 
 	public void LoadNextScene()
 	{
-		//Debug.Log("Helloworld");
-		Application.LoadLevel("fox_scene");
+		Application.LoadLevel("main_camdetect_scene");
 	}
 }
