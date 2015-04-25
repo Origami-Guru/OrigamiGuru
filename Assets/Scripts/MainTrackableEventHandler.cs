@@ -148,7 +148,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
             ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
             choosingOrigamiModel.makewords();
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model ", windowStyle);
-            GUI.Label (new Rect (10,10,150,20), "I am a Custom Button", fontStyle);
         }
 
     }
