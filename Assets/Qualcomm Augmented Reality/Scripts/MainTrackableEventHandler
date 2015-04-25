@@ -9,24 +9,18 @@ using UnityEngine;
 /// <summary>
 /// A custom handler that implements the ITrackableEventHandler interface.
 /// </summary>
-public class MainTrackableEventHandler : MonoBehaviour,
+public class DefaultTrackableEventHandler : MonoBehaviour,
                                             ITrackableEventHandler
 {
     #region PRIVATE_MEMBER_VARIABLES
  
     private TrackableBehaviour mTrackableBehaviour;
-    private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
+    private bool isChooseModel = true;                 //this variable means user does/doesn't choose origami model to fold.
     private bool showPopupWindow = false;
+    private bool createButton = false;
+
     
     #endregion // PRIVATE_MEMBER_VARIABLES
-
-    #region PUBLIC_MEMBER_VARIABLES
-
-    public GUIStyle windowStyle;
-    public GUIStyle fontStyle;
-    public GUIStyle buttonStyle;
-
-    #endregion
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
     
@@ -99,8 +93,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
         {
             //user choose origami model method.
             showPopupWindow = true;
-            //ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
-            //choosingOrigamiModel.OnGUI();            
             Debug.Log("User should choose any model first!!!!!!!!");   
         }
     }
@@ -130,6 +122,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
 
     private void chooseModelContent(int windowID){
+        createButton = true;
+
         GUI.Button(new Rect(10,30,80,20), "Choose Crane");
 
         if(isChooseModel == false){
@@ -138,17 +132,9 @@ public class MainTrackableEventHandler : MonoBehaviour,
     }
 
     private void OnGUI(){
-        float scaleX = (float)(Screen.width)/600.0f;
-        float scaleY = (float)(Screen.height)/1024.0f;
-
-        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-        Rect WindowRect = new Rect(30, 30, 540, 984);
-        
+        Rect WindowRect = new Rect(20, 20, 120, 50);
         if(showPopupWindow == true){
-            ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
-            choosingOrigamiModel.makewords();
-            GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model ", windowStyle);
-            GUI.Label (new Rect (10,10,150,20), "I am a Custom Button", fontStyle);
+            GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model");
         }
 
     }
