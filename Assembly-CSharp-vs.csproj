@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</ProjectGuid>
+	<ProjectGuid>{2CF27E13-668A-2DBC-425A-EE3DCF7E9E63}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -77,9 +77,15 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Scripts\AutoFading.cs" />
+     <Compile Include="Assets\Scripts\ChoosingOrigamiModel.cs" />
      <Compile Include="Assets\Scripts\ConnectDB.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
+     <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
+     <Compile Include="Assets\Scripts\SampleButton.cs" />
+     <Compile Include="Assets\Scripts\ScrollableList.cs" />
+     <Compile Include="Assets\Scripts\ScrollableModelList.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
+     <Compile Include="Assets\Scripts\StyleChoosingBox.cs" />
      <Compile Include="Assets\Scripts\TrackableList.cs" />
      <Compile Include="Assets\Scripts\testscript.cs" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
@@ -90,29 +96,31 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
+     <None Include="Assets\font\RobotoCondensed\LICENSE.txt" />
      <None Include="Assets\StreamingAssets\QCAR\Fox.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Crane.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
      <None Include="Assets\StreamingAssets\QCAR\unity.txt" />
+     <None Include="Assets\font\Roboto\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.SqliteClient">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

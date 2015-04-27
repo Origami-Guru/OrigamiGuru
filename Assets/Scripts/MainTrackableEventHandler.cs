@@ -145,8 +145,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
         Rect WindowRect = new Rect(30, 30, 540, 984);
         
         if(showPopupWindow == true){
-            ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
-            choosingOrigamiModel.makewords();
+            //ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
+            //choosingOrigamiModel.makewords();
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
         }
 

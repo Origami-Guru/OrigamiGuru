@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{E93A920D-2E47-33F8-9310-2C99B6F2947B}</ProjectGuid>
+	<ProjectGuid>{F3A781C2-62F0-A877-EE33-1286204289D9}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -55,12 +55,14 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
+     <None Include="Assets\font\RobotoCondensed\LICENSE.txt" />
      <None Include="Assets\StreamingAssets\QCAR\Fox.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Crane.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
      <None Include="Assets\StreamingAssets\QCAR\unity.txt" />
+     <None Include="Assets\font\Roboto\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -68,22 +70,22 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions.Editor">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Editor/QCAR/Scripts/Qualcomm.Vuforia.UnityExtensions.Editor.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Editor/QCAR/Scripts/Qualcomm.Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.SqliteClient">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.SqliteClient.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
- <HintPath>/Users/gatukgl/New Unity Project/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
