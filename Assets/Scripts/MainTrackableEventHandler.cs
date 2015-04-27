@@ -130,7 +130,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
 
     private void chooseModelContent(int windowID){
-        GUI.Button(new Rect(10,30,80,20), "Choose Crane");
+        //GUI.Button(new Rect(10,30,80,20), "Choose Crane");
 
         if(isChooseModel == false){
             isChooseModel = true;
@@ -147,7 +147,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         if(showPopupWindow == true){
             ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
             choosingOrigamiModel.makewords();
-            GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model ", windowStyle);
+            GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
         }
 
     }
