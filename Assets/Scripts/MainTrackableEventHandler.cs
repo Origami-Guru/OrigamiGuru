@@ -5,6 +5,7 @@ Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
 
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// A custom handler that implements the ITrackableEventHandler interface.
@@ -25,6 +26,10 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle windowStyle;
     public GUIStyle fontStyle;
     public GUIStyle buttonStyle;
+
+    //test customlistview
+    public List<GUIContent> items;
+    public Vector2 scrollVector;
 
     #endregion
 
@@ -131,6 +136,21 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
     private void chooseModelContent(int windowID){
         //GUI.Button(new Rect(10,30,80,20), "Choose Crane");
+        //test customlistview
+        GUILayout.BeginHorizontal(GUI.skin.box);
+        scrollVector = GUILayout.BeginScrollView(scrollVector);
+
+        for (int i = 0; i < items.Count; i++)
+        {
+            GUILayout.Label(items[i]);
+            if (GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition))
+            {
+                // Handle events here
+            }
+        }
+        GUILayout.EndScrollView();
+        GUILayout.EndHorizontal();
+        ///////
 
         if(isChooseModel == false){
             isChooseModel = true;
