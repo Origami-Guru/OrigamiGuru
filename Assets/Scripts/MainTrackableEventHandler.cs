@@ -17,7 +17,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool showPopupWindow = false;
+    private bool showPopupWindow = true;
+
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -26,10 +27,11 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle windowStyle;
     public GUIStyle fontStyle;
     public GUIStyle buttonStyle;
+    public GUIStyle gridviewStyle;
 
-    //test customlistview
-    public List<GUIContent> items;
-    public Vector2 scrollVector;
+    //custom grid
+    public int selGridInt = 0;
+    public Texture[] selImage = new Texture[3];
 
     #endregion
 
@@ -135,22 +137,17 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
 
     private void chooseModelContent(int windowID){
-        //GUI.Button(new Rect(10,30,80,20), "Choose Crane");
-        //test customlistview
-        GUILayout.BeginHorizontal(GUI.skin.box);
-        scrollVector = GUILayout.BeginScrollView(scrollVector);
+        float scaleX = (float)(Screen.width)/600.0f;
+        float scaleY = (float)(Screen.height)/1024.0f;
 
-        for (int i = 0; i < items.Count; i++)
-        {
-            GUILayout.Label(items[i]);
-            if (GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition))
-            {
-                // Handle events here
-            }
-        }
-        GUILayout.EndScrollView();
-        GUILayout.EndHorizontal();
-        ///////
+        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
+        
+        GUILayout.BeginVertical("Box");
+        selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
+        if (GUILayout.Button("Start"))
+            Debug.Log("You chose " + selImage[selGridInt]);
+        
+        GUILayout.EndVertical();        
 
         if(isChooseModel == false){
             isChooseModel = true;
@@ -165,10 +162,9 @@ public class MainTrackableEventHandler : MonoBehaviour,
         Rect WindowRect = new Rect(30, 30, 540, 984);
         
         if(showPopupWindow == true){
-            //ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
-            //choosingOrigamiModel.makewords();
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
         }
+
 
     }
 
