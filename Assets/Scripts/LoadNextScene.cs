@@ -109,4 +109,114 @@ public class LoadNextScene : MonoBehaviour {
 		Application.LoadLevel("Crane13");
 	}
 
+	public void LoadNextStepPigeon1()
+	{
+		Application.LoadLevel("Pigeon01");
+	}
+	public void LoadNextStepPigeon2()
+	{
+		Application.LoadLevel("Pigeon02");
+	}
+
+	public void LoadNextStepPigeon3()
+	{
+		Application.LoadLevel("Pigeon03");
+	}
+
+	public void LoadNextStepPigeon4()
+	{
+		Application.LoadLevel("Pigeon04");
+	}
+
+	public void LoadNextStepPigeon5()
+	{
+		Application.LoadLevel("Pigeon05");
+	}
+
+	public void LoadNextStepPigeon6()
+	{
+		Application.LoadLevel("Pigeon06");
+	}
+	public void LoadNextStepPigeon7()
+	{
+		Application.LoadLevel("Pigeon07");
+	}
+	public void LoadNextStepPigeon8()
+	{
+		Application.LoadLevel("Pigeon08");
+	}
+	public void LoadNextStepPigeon9()
+	{
+		Application.LoadLevel("Pigeon09");
+	}
+
+	public void LoadNextStepDolphin1()
+	{
+		Application.LoadLevel("Dolphin01");
+	}
+	public void LoadNextStepDolphin2()
+	{
+		Application.LoadLevel("Dolphin02");
+	}
+	public void LoadNextStepDolphin3()
+	{
+		Application.LoadLevel("Dolphin03");
+	}
+	public void LoadNextStepDolphin4()
+	{
+		Application.LoadLevel("Dolphin04");
+	}
+	public void LoadNextStepDolphin5()
+	{
+		Application.LoadLevel("Dolphin05");
+	}
+	public void LoadNextStepDolphin6()
+	{
+		Application.LoadLevel("Dolphin06");
+	}
+	public void LoadNextStepDolphin7()
+	{
+		Application.LoadLevel("Dolphin07");
+	}
+	public void LoadNextStepDolphin8()
+	{
+		Application.LoadLevel("Dolphin08");
+	}
+	public void LoadNextStepDolphin9()
+	{
+		Application.LoadLevel("Dolphin09");
+	}
+	public void LoadNextStepDolphin10()
+	{
+		Application.LoadLevel("Dolphin10");
+	}
+	public void LoadNextStepDolphin11()
+	{
+		Application.LoadLevel("Dolphin11");
+	}
+	public void LoadNextStepDolphin12()
+	{
+		Application.LoadLevel("Dolphin12");
+	}
+	public void LoadNextStepDolphin13()
+	{
+		Application.LoadLevel("Dolphin13");
+	}
+	public void LoadNextStepDolphin14()
+	{
+		Application.LoadLevel("Dolphin14");
+	}
+	public void LoadNextStepDolphin15()
+	{
+		Application.LoadLevel("Dolphin15");
+	}
+	public void LoadNextStepDolphin16()
+	{
+		Application.LoadLevel("Dolphin16");
+	}
+
+
+
+
+
 }
