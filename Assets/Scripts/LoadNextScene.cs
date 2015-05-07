@@ -215,6 +215,138 @@ public class LoadNextScene : MonoBehaviour {
 		Application.LoadLevel("Dolphin16");
 	}
 
+	public void LoadNextStepTortoise1()
+	{
+		Application.LoadLevel("Tortoise01");
+	}
+	public void LoadNextStepTortoise2()
+	{
+		Application.LoadLevel("Tortoise02");
+	}
+	public void LoadNextStepTortoise3()
+	{
+		Application.LoadLevel("Tortoise03");
+	}
+	public void LoadNextStepTortoise4()
+	{
+		Application.LoadLevel("Tortoise04");
+	}
+	public void LoadNextStepTortoise5()
+	{
+		Application.LoadLevel("Tortoise05");
+	}
+	public void LoadNextStepTortoise6()
+	{
+		Application.LoadLevel("Tortoise06");
+	}
+	public void LoadNextStepTortoise7()
+	{
+		Application.LoadLevel("Tortoise07");
+	}
+	public void LoadNextStepTortoise8()
+	{
+		Application.LoadLevel("Tortoise08");
+	}
+	public void LoadNextStepTortoise9()
+	{
+		Application.LoadLevel("Tortoise09");
+	}
+	public void LoadNextStepTortoise10()
+	{
+		Application.LoadLevel("Tortoise10");
+	}
+	public void LoadNextStepTortoise11()
+	{
+		Application.LoadLevel("Tortoise11");
+	}
+
+	public void LoadNextStepDogface1()
+	{
+		Application.LoadLevel("Dog_face01");
+	}
+	public void LoadNextStepDogface2()
+	{
+		Application.LoadLevel("Dog_face02");
+	}
+	public void LoadNextStepDogface3()
+	{
+		Application.LoadLevel("Dog_face03");
+	}
+	public void LoadNextStepDogface4()
+	{
+		Application.LoadLevel("Dog_face04");
+	}
+	public void LoadNextStepDogface5()
+	{
+		Application.LoadLevel("Dog_face05");
+	}
+	public void LoadNextStepDogface6()
+	{
+		Application.LoadLevel("Dog_face06");
+	}
+	public void LoadNextStepDogface7()
+	{
+		Application.LoadLevel("Dog_face07");
+	}
+	public void LoadNextStepDogface8()
+	{
+		Application.LoadLevel("Dog_face08");
+	}
+	public void LoadNextStepDogface9()
+	{
+		Application.LoadLevel("Dog_face09");
+	}
+	public void LoadNextStepDogface10()
+	{
+		Application.LoadLevel("Dog_face10");
+	}
+	public void LoadNextStepDogface11()
+	{
+		Application.LoadLevel("Dog_face11");
+	}
+
+	public void LoadNextStepFoxface1()
+	{
+		Application.LoadLevel("Fox_face01");
+	}
+	public void LoadNextStepFoxface2()
+	{
+		Application.LoadLevel("Fox_face02");
+	}
+	public void LoadNextStepFoxface3()
+	{
+		Application.LoadLevel("Fox_face03");
+	}
+	public void LoadNextStepFoxface4()
+	{
+		Application.LoadLevel("Fox_face04");
+	}
+	public void LoadNextStepFoxface5()
+	{
+		Application.LoadLevel("Fox_face05");
+	}
+	public void LoadNextStepFoxface6()
+	{
+		Application.LoadLevel("Fox_face06");
+	}
+	public void LoadNextStepFoxface7()
+	{
+		Application.LoadLevel("Fox_face07");
+	}
+	public void LoadNextStepFoxface8()
+	{
+		Application.LoadLevel("Fox_face08");
+	}
+	public void LoadNextStepFoxface9()
+	{
+		Application.LoadLevel("Fox_face09");
+	}
+	public void LoadNextStepFoxface10()
+	{
+		Application.LoadLevel("Fox_face10");
+	}
+
+
 
 
 
