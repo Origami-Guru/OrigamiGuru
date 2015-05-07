@@ -79,10 +79,10 @@
      <Compile Include="Assets\Scripts\AutoFading.cs" />
      <Compile Include="Assets\Scripts\ChoosingOrigamiModel.cs" />
      <Compile Include="Assets\Scripts\ConnectDB.cs" />
+     <Compile Include="Assets\Scripts\DataManagement.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
-     <Compile Include="Assets\Scripts\ScrollableList.cs" />
      <Compile Include="Assets\Scripts\ScrollableModelList.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
      <Compile Include="Assets\Scripts\StyleChoosingBox.cs" />
