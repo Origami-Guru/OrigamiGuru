@@ -346,7 +346,79 @@ public class LoadNextScene : MonoBehaviour {
 		Application.LoadLevel("Fox_face10");
 	}
 
+	public void LoadNextStepCat1()
+	{
+		Application.LoadLevel("Cat01");
+	}
+	public void LoadNextStepCat2()
+	{
+		Application.LoadLevel("Cat02");
+	}
+	public void LoadNextStepCat3()
+	{
+		Application.LoadLevel("Cat03");
+	}
+	public void LoadNextStepCat4()
+	{
+		Application.LoadLevel("Cat04");
+	}
+	public void LoadNextStepCat5()
+	{
+		Application.LoadLevel("Cat05");
+	}
+	public void LoadNextStepCat6()
+	{
+		Application.LoadLevel("Cat06");
+	}
 
+	public void LoadNextStepGoldfish1()
+	{
+		Application.LoadLevel("Goldfish01");
+	}
+	public void LoadNextStepGoldfish2()
+	{
+		Application.LoadLevel("Goldfish02");
+	}
+	public void LoadNextStepGoldfish3()
+	{
+		Application.LoadLevel("Goldfish03");
+	}
+	public void LoadNextStepGoldfish4()
+	{
+		Application.LoadLevel("Goldfish04");
+	}
+	public void LoadNextStepGoldfish5()
+	{
+		Application.LoadLevel("Goldfish05");
+	}
+	public void LoadNextStepGoldfish6()
+	{
+		Application.LoadLevel("Goldfish06");
+	}
+	public void LoadNextStepGoldfish7()
+	{
+		Application.LoadLevel("Goldfish07");
+	}
+	public void LoadNextStepGoldfish8()
+	{
+		Application.LoadLevel("Goldfish08");
+	}
+	public void LoadNextStepGoldfish9()
+	{
+		Application.LoadLevel("Goldfish09");
+	}
+	public void LoadNextStepGoldfish10()
+	{
+		Application.LoadLevel("Goldfish10");
+	}
+	public void LoadNextStepGoldfish11()
+	{
+		Application.LoadLevel("Goldfish11");
+	}
+	public void LoadNextStepGoldfish12()
+	{
+		Application.LoadLevel("Goldfish12");
+	}
 
 
 
