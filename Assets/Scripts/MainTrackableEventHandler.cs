@@ -26,12 +26,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private bool showPopupWindow = false;
     private bool foundedTarget = false;
     private string targetFoundName;
-    private string targetModelName;
 
     private string sql;
     private string modelsName;
     private string modelsSceneName;
-    private int counter = 0;
+
+    private ArrayList<string><string> modelList = new ArrayList<string><string>();
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -96,9 +96,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     {
         if(foundedTarget == false){
             targetFoundName = mTrackableBehaviour.TrackableName;
-            targetFoundName = "crane_step_01_01";
+			targetFoundName = "crane_step_01_01";
             foundedTarget = true;
-
         }
 
         //user used to choose origami model to fold.
@@ -189,18 +188,26 @@ public class MainTrackableEventHandler : MonoBehaviour,
                 INNER JOIN Models
                 ON Models_Steps.model_id = Models.model_id
                 WHERE Steps.step_name = '" + stepName + "'";
+
         db_command.CommandText = sql;
         IDataReader reader = db_command.ExecuteReader();
         
         if(reader != null){
-            while(reader.Read()){
+			List<string> modelsNameList = new List<string>;
+			List<string> modelsSceneNameList = new List<string>;
+
+			while(reader.Read()){
                 modelsName = reader.GetString(0);
                 modelsSceneName = reader.GetString(1);
+
                 Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
 
-
-
-            }
+				modelsNameArr[counter] = modelsName;
+				modelsSceneNameArr[counter] = modelsSceneName;
+				counter += 1;
+			}
+			
+			Debug.Log("Query from database in array: " + modelsNameArr[0] + " & " + modelsSceneNameArr[0]);
         }
 
 
