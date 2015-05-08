@@ -4,8 +4,14 @@ All Rights Reserved.
 Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
 
-using UnityEngine;
+using Mono.Data.Sqlite;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /// <summary>
 /// A custom handler that implements the ITrackableEventHandler interface.
@@ -17,8 +23,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool showPopupWindow = true;
+    private bool showPopupWindow = false;
+    private bool foundedTarget = false;
+    private string targetFoundName;
 
+    private string sql;
+    private string modelsName;
+    private string modelsSceneName;
+
+    private Dictionary<string, string> modelDictionary = new Dictionary<string, string>();
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -81,35 +94,30 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
     private void OnTrackingFound()
     {
+        if(foundedTarget == false){
+            targetFoundName = mTrackableBehaviour.TrackableName;
+            foundedTarget = true;
+        }
+
         //user used to choose origami model to fold.
-        if(isChooseModel == true)
+        
+        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+
+        // Enable rendering:
+        foreach (Renderer component in rendererComponents)
         {
-            Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-            Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-            // Enable rendering:
-            foreach (Renderer component in rendererComponents)
-            {
-                component.enabled = true;
-            }
-
-            // Enable colliders:
-            foreach (Collider component in colliderComponents)
-            {
-                component.enabled = true;
-            }
-
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+            component.enabled = true;
         }
-        //user doesn't used to choose origami model to fold.
-        else
+
+        // Enable colliders:
+        foreach (Collider component in colliderComponents)
         {
-            //user choose origami model method.
-            showPopupWindow = true;
-            //ChoosingOrigamiModel choosingOrigamiModel = new ChoosingOrigamiModel();
-            //choosingOrigamiModel.OnGUI();            
-            Debug.Log("User should choose any model first!!!!!!!!");   
+                component.enabled = true;
         }
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+        
     }
 
 
@@ -144,14 +152,11 @@ public class MainTrackableEventHandler : MonoBehaviour,
         
         GUILayout.BeginVertical("Box");
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
+        
         if (GUILayout.Button("Start"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
         GUILayout.EndVertical();        
-
-        if(isChooseModel == false){
-            isChooseModel = true;
-        }
     }
 
     private void OnGUI(){
@@ -161,11 +166,52 @@ public class MainTrackableEventHandler : MonoBehaviour,
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         Rect WindowRect = new Rect(30, 30, 540, 984);
         
-        if(showPopupWindow == true){
+        if(foundedTarget == true){
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
+            getModel(targetFoundName);
         }
+    }    
 
+    public void getModel(string stepName){
+        string connection = "URI=file:" + Application.dataPath + "/OrigamiGuruDB"; //Path to database.
+        IDbConnection db_connection;
 
+        db_connection = (IDbConnection) new SqliteConnection(connection);
+        db_connection.Open();
+        IDbCommand db_command = db_connection.CreateCommand();  
+
+        sql = @"SELECT DISTINCT Models.model_name, Models.model_scene_name
+                FROM Steps
+                INNER JOIN Models_Steps
+                ON Steps.step_id = Models_Steps.step_id
+                INNER JOIN Models
+                ON Models_Steps.model_id = Models.model_id
+                WHERE Steps.step_name = '" + stepName + "'";
+
+        db_command.CommandText = sql;
+        IDataReader reader = db_command.ExecuteReader();
+        
+        if(reader != null){
+			while(reader.Read()){
+                modelsName = reader.GetString(0);
+                modelsSceneName = reader.GetString(1);
+
+                Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
+                if(modelDictionary.ContainsKey(modelsName) == false){
+				    modelDictionary.Add(modelsName, modelsSceneName);
+                }
+                else{
+                    Debug.Log("Found " + modelsName + " in dictionary.");
+                }
+			}
+	    }
+
+        reader.Close();
+        reader = null;
+        db_command.Dispose();
+        db_command = null;
+        db_connection.Close();
+        db_connection = null;             
     }
 
 }
