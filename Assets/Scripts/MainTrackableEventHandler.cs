@@ -31,7 +31,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private string modelsName;
     private string modelsSceneName;
 
-    private ArrayList<string><string> modelList = new ArrayList<string><string>();
+    private Dictionary<string, string> modelDictionary = new Dictionary<string, string>();
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -96,7 +96,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
     {
         if(foundedTarget == false){
             targetFoundName = mTrackableBehaviour.TrackableName;
-			targetFoundName = "crane_step_01_01";
             foundedTarget = true;
         }
 
@@ -153,6 +152,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         
         GUILayout.BeginVertical("Box");
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
+        
         if (GUILayout.Button("Start"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
@@ -170,8 +170,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
             getModel(targetFoundName);
         }
-
-    }
+    }    
 
     public void getModel(string stepName){
         string connection = "URI=file:" + Application.dataPath + "/OrigamiGuruDB"; //Path to database.
@@ -193,24 +192,19 @@ public class MainTrackableEventHandler : MonoBehaviour,
         IDataReader reader = db_command.ExecuteReader();
         
         if(reader != null){
-			List<string> modelsNameList = new List<string>;
-			List<string> modelsSceneNameList = new List<string>;
-
 			while(reader.Read()){
                 modelsName = reader.GetString(0);
                 modelsSceneName = reader.GetString(1);
 
                 Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
-
-				modelsNameArr[counter] = modelsName;
-				modelsSceneNameArr[counter] = modelsSceneName;
-				counter += 1;
+                if(modelDictionary.ContainsKey(modelsName) == false){
+				    modelDictionary.Add(modelsName, modelsSceneName);
+                }
+                else{
+                    Debug.Log("Found " + modelsName + " in dictionary.");
+                }
 			}
-			
-			Debug.Log("Query from database in array: " + modelsNameArr[0] + " & " + modelsSceneNameArr[0]);
-        }
-
-
+	    }
 
         reader.Close();
         reader = null;
