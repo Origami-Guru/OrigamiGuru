@@ -79,7 +79,6 @@
      <Compile Include="Assets\Scripts\AutoFading.cs" />
      <Compile Include="Assets\Scripts\ChoosingOrigamiModel.cs" />
      <Compile Include="Assets\Scripts\ConnectDB.cs" />
-     <Compile Include="Assets\Scripts\DataManagement.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
@@ -93,6 +92,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\Cat.xml" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
