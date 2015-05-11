@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NewBehaviourScript.cs" />
+     <Compile Include="Assets\NewBehaviourScript1.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CylinderTargetBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DataSetLoadBehaviour.cs" />
@@ -80,6 +82,7 @@
      <Compile Include="Assets\Scripts\ChoosingOrigamiModel.cs" />
      <Compile Include="Assets\Scripts\ConnectDB.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
+     <Compile Include="Assets\Scripts\LoadNextScene.cs" />
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\ScrollableModelList.cs" />
