@@ -9,6 +9,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -45,6 +46,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public int selGridInt = 0;
     public Texture[] selImage;
     private int selImgSize = 0;
+    private int counter;
 
     #endregion
 
@@ -98,9 +100,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         targetFoundName = mTrackableBehaviour.TrackableName;
         getModel(targetFoundName);
 
-
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-        
     }
 
 
@@ -123,12 +123,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
             selImgSize = modelDictionary.Count;
         }
 
+        counter = 0;
         selImage = new Texture[selImgSize];
-/*
-        for(int index = 0; index < selImgSize; index += 1){
-            selImage[index] = Resources.Load("../2DModel/crane/crane_model.jpg") as Texture[]; 
+
+        foreach(KeyValuePair<string, string> md in modelDictionary){
+            selImage[counter] =  Resources.Load("'" + md.Key + "'") as Texture;
+            counter += 1;
         }
-        */
+
+
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
         
         if (GUILayout.Button("Start"))
@@ -176,13 +179,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
             if(modelDictionary.ContainsKey(modelsName)){
                 Debug.Log("Model: " + modelsName + "is already in Dictionary.");
-
             }
+
             else{
                 modelDictionary.Add(modelsName, modelsSceneName);
             }
    		}
-	    
 
         reader.Close();
         reader = null;
