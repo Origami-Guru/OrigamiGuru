@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="pigeon_step_07_16" size="500.000000 448.000000" />
+    <ImageTarget name="pigeon_step_07_15" size="500.000000 453.000000" />
+    <ImageTarget name="pigeon_step_07_14" size="500.000000 465.000000" />
+    <ImageTarget name="pigeon_step_07_13" size="500.000000 471.000000" />
+    <ImageTarget name="pigeon_step_07_12" size="500.000000 465.000000" />
+    <ImageTarget name="pigeon_step_07_11" size="500.000000 463.000000" />
+    <ImageTarget name="pigeon_step_07_10" size="500.000000 465.000000" />
+    <ImageTarget name="pigeon_step_07_09" size="500.000000 441.000000" />
+    <ImageTarget name="pigeon_step_07_08" size="500.000000 465.000000" />
+    <ImageTarget name="pigeon_step_07_07" size="500.000000 451.000000" />
+    <ImageTarget name="pigeon_step_07_06" size="500.000000 469.000000" />
+    <ImageTarget name="pigeon_step_07_05" size="500.000000 452.000000" />
+    <ImageTarget name="pigeon_step_07_04" size="500.000000 457.000000" />
+    <ImageTarget name="pigeon_step_07_03" size="500.000000 429.000000" />
+    <ImageTarget name="pigeon_step_07_02" size="500.000000 440.000000" />
+    <ImageTarget name="pigeon_step_07_01" size="500.000000 444.000000" />
+    <ImageTarget name="pigeon_step_06_08" size="500.000000 427.000000" />
+    <ImageTarget name="pigeon_step_06_06" size="500.000000 410.000000" />
+    <ImageTarget name="pigeon_step_06_07" size="500.000000 402.000000" />
+    <ImageTarget name="pigeon_step_06_05" size="500.000000 414.000000" />
+    <ImageTarget name="pigeon_step_06_04" size="500.000000 412.000000" />
+    <ImageTarget name="pigeon_step_06_03" size="500.000000 416.000000" />
+    <ImageTarget name="pigeon_step_06_02" size="500.000000 424.000000" />
+    <ImageTarget name="pigeon_step_06_01" size="500.000000 398.000000" />
+    <ImageTarget name="pigeon_step_05_08" size="500.000000 504.000000" />
+    <ImageTarget name="pigeon_step_05_07" size="500.000000 476.000000" />
+    <ImageTarget name="pigeon_step_05_06" size="500.000000 494.000000" />
+    <ImageTarget name="pigeon_step_05_05" size="500.000000 491.000000" />
+    <ImageTarget name="pigeon_step_05_04" size="500.000000 528.000000" />
+    <ImageTarget name="pigeon_step_05_03" size="500.000000 535.000000" />
+    <ImageTarget name="pigeon_step_05_02" size="500.000000 522.000000" />
+    <ImageTarget name="pigeon_step_05_01" size="500.000000 520.000000" />
+    <ImageTarget name="pigeon_step_04_08" size="500.000000 983.000000" />
+    <ImageTarget name="pigeon_step_04_07" size="500.000000 934.000000" />
+    <ImageTarget name="pigeon_step_04_06" size="500.000000 946.000000" />
+    <ImageTarget name="pigeon_step_04_05" size="500.000000 922.000000" />
+    <ImageTarget name="pigeon_step_04_04" size="500.000000 966.000000" />
+    <ImageTarget name="pigeon_step_04_03" size="500.000000 937.000000" />
+    <ImageTarget name="pigeon_step_04_02" size="500.000000 920.000000" />
+    <ImageTarget name="pigeon_step_04_01" size="500.000000 930.000000" />
+    <ImageTarget name="pigeon_step_03_08" size="500.000000 1134.000000" />
+    <ImageTarget name="pigeon_step_03_07" size="500.000000 977.000000" />
+    <ImageTarget name="pigeon_step_03_06" size="500.000000 1122.000000" />
+    <ImageTarget name="pigeon_step_03_05" size="500.000000 1080.000000" />
+    <ImageTarget name="pigeon_step_03_04" size="500.000000 1111.000000" />
+    <ImageTarget name="pigeon_step_03_03" size="500.000000 1087.000000" />
+    <ImageTarget name="pigeon_step_03_02" size="500.000000 1234.000000" />
+    <ImageTarget name="pigeon_step_03_01" size="500.000000 1238.000000" />
+    <ImageTarget name="pigeon_step_02_04" size="500.000000 286.000000" />
+    <ImageTarget name="pigeon_step_02_03" size="500.000000 288.988098" />
+    <ImageTarget name="pigeon_step_02_02" size="500.000000 247.000000" />
+    <ImageTarget name="pigeon_step_02_01" size="500.000000 255.905518" />
+    <ImageTarget name="pigeon_step_01_04" size="500.000000 286.000000" />
+    <ImageTarget name="pigeon_step_01_03" size="500.000000 288.988098" />
+    <ImageTarget name="pigeon_step_01_02" size="500.000000 247.000000" />
+    <ImageTarget name="pigeon_step_01_01" size="500.000000 255.905518" />
+  </Tracking>
+</QCARConfig>
