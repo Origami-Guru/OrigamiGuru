@@ -9,6 +9,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,7 +24,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool showPopupWindow = false;
     private bool foundedTarget = false;
     private string targetFoundName;
 
@@ -31,7 +31,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private string modelsName;
     private string modelsSceneName;
 
-    private Dictionary<string, string> modelDictionary = new Dictionary<string, string>();
+    private Dictionary<string, string> modelDictionary;     //dictionary to keep the query from the database for origami models
     
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -44,7 +44,9 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
     //custom grid
     public int selGridInt = 0;
-    public Texture[] selImage = new Texture[3];
+    public Texture[] selImage;
+    private int selImgSize = 0;
+    private int counter;
 
     #endregion
 
@@ -62,7 +64,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
 
-
     #region PUBLIC_METHODS
 
     /// <summary>
@@ -73,10 +74,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
     {
-        if (newStatus == TrackableBehaviour.Status.DETECTED ||
+        if(newStatus == TrackableBehaviour.Status.DETECTED || 
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
+            modelDictionary = new Dictionary<string, string>();
+            foundedTarget = true;
             OnTrackingFound();
         }
         else
@@ -94,50 +97,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
     private void OnTrackingFound()
     {
-        if(foundedTarget == false){
-            targetFoundName = mTrackableBehaviour.TrackableName;
-            foundedTarget = true;
-        }
-
-        //user used to choose origami model to fold.
-        
-        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-        // Enable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = true;
-        }
-
-        // Enable colliders:
-        foreach (Collider component in colliderComponents)
-        {
-                component.enabled = true;
-        }
+        targetFoundName = mTrackableBehaviour.TrackableName;
+        getModel(targetFoundName);
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-        
     }
 
 
     private void OnTrackingLost()
     {
-        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-        // Disable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = false;
-        }
-
-        // Disable colliders:
-        foreach (Collider component in colliderComponents)
-        {
-            component.enabled = false;
-        }
-
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
 
@@ -149,8 +117,21 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
-        
         GUILayout.BeginVertical("Box");
+
+        if(modelDictionary.Count != 0){
+            selImgSize = modelDictionary.Count;
+        }
+
+        counter = 0;
+        selImage = new Texture[selImgSize];
+
+        foreach(KeyValuePair<string, string> md in modelDictionary){
+            selImage[counter] =  Resources.Load("'" + md.Key + "'") as Texture;
+            counter += 1;
+        }
+
+
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
         
         if (GUILayout.Button("Start"))
@@ -166,9 +147,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         Rect WindowRect = new Rect(30, 30, 540, 984);
         
-        if(foundedTarget == true){
-            GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model ", windowStyle);
-            getModel(targetFoundName);
+        if(foundedTarget == true && isChooseModel == false){
+            GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model.", windowStyle);
         }
     }    
 
@@ -191,20 +171,20 @@ public class MainTrackableEventHandler : MonoBehaviour,
         db_command.CommandText = sql;
         IDataReader reader = db_command.ExecuteReader();
         
-        if(reader != null){
-			while(reader.Read()){
-                modelsName = reader.GetString(0);
-                modelsSceneName = reader.GetString(1);
+		while(reader.Read()){
+            modelsName = reader.GetString(0);
+            modelsSceneName = reader.GetString(1);
 
-                Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
-                if(modelDictionary.ContainsKey(modelsName) == false){
-				    modelDictionary.Add(modelsName, modelsSceneName);
-                }
-                else{
-                    Debug.Log("Found " + modelsName + " in dictionary.");
-                }
-			}
-	    }
+            Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
+
+            if(modelDictionary.ContainsKey(modelsName)){
+                Debug.Log("Model: " + modelsName + "is already in Dictionary.");
+            }
+
+            else{
+                modelDictionary.Add(modelsName, modelsSceneName);
+            }
+   		}
 
         reader.Close();
         reader = null;
