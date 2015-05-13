@@ -4,13 +4,15 @@ All Rights Reserved.
 Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
 
-using Mono.Data.Sqlite;
+//using Mono.Data.Sqlite;
+//using Mono.Data.Tds;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+//using System.Configuration;
+//using System.Data;
+//using System.Net.Sockets;
+//using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -25,7 +27,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool foundedTarget = false;
+    private bool foundedTarget = true;
     private string targetFoundName;
 
     private string sql;
@@ -60,6 +62,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
+
+        OnTrackingFound();
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -77,7 +81,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     {
         if(newStatus == TrackableBehaviour.Status.DETECTED || 
             newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED ||
+            foundedTarget == true)
         {
             modelDictionary = new Dictionary<string, string>();
             foundedTarget = true;
@@ -99,7 +104,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private void OnTrackingFound()
     {
         targetFoundName = mTrackableBehaviour.TrackableName;
-        getModel(targetFoundName);
+        targetFoundName = "crane_step_00";
+        //getModel(targetFoundName);
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
@@ -119,12 +125,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
         GUILayout.BeginVertical("Box");
-
+/*
         if(modelDictionary.Count != 0){
             selImgSize = modelDictionary.Count;
         }
 
         counter = 0;
+
+        //selection grid begins
+
         selImage = new Texture[selImgSize];
 
         foreach(KeyValuePair<string, string> md in modelDictionary){
@@ -132,14 +141,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
             counter += 1;
         }
 
-
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
         
         if (GUILayout.Button("Start"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
         GUILayout.EndVertical();        
+*/
     }
+
 
     private void OnGUI(){
         float scaleX = (float)(Screen.width)/600.0f;
@@ -152,7 +162,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model.", windowStyle);
         }
     }    
-
+/*
     public void getModel(string stepName){
         string connection = "URI=file:" + Application.dataPath + "/OrigamiGuruDB"; //Path to database.
         IDbConnection db_connection;
@@ -194,5 +204,5 @@ public class MainTrackableEventHandler : MonoBehaviour,
         db_connection.Close();
         db_connection = null;             
     }
-
+*/
 }

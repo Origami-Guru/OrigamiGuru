@@ -63,6 +63,7 @@
      <None Include="Assets\StreamingAssets\QCAR\Crane.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
+     <None Include="Assets\JSON Tests\TroubleShoot.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
      <None Include="Assets\StreamingAssets\QCAR\unity.txt" />
      <None Include="Assets\font\Roboto\LICENSE.txt" />
@@ -75,14 +76,8 @@
  <Reference Include="Qualcomm.Vuforia.UnityExtensions.Editor">
  <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Editor/QCAR/Scripts/Qualcomm.Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Data">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/System.Data.dll</HintPath>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
  <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
@@ -90,6 +85,10 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{ACC03E43-6F1E-1FC6-5BA3-747C3BD7EB7D}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

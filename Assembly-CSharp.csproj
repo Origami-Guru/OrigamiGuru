@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\JSON Tests\CSharp\Test_CSharp.cs" />
      <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\NewBehaviourScript1.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CloudRecoBehaviour.cs" />
@@ -79,17 +80,14 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Scripts\AutoFading.cs" />
-     <Compile Include="Assets\Scripts\ChoosingOrigamiModel.cs" />
-     <Compile Include="Assets\Scripts\ConnectDB.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
      <Compile Include="Assets\Scripts\LoadNextScene.cs" />
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
-     <Compile Include="Assets\Scripts\ScrollableModelList.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
-     <Compile Include="Assets\Scripts\StyleChoosingBox.cs" />
      <Compile Include="Assets\Scripts\TrackableList.cs" />
-     <Compile Include="Assets\Scripts\testscript.cs" />
+     <Compile Include="Assets\Scripts\test_csvreader.cs" />
+     <Compile Include="Assets\Scripts\test_jsonreader.cs" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VertexLitWithZ.shader" />
@@ -106,24 +104,23 @@
      <None Include="Assets\StreamingAssets\QCAR\Crane.xml" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
+     <None Include="Assets\JSON Tests\TroubleShoot.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
      <None Include="Assets\StreamingAssets\QCAR\unity.txt" />
      <None Include="Assets\font\Roboto\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Mono.Data">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/System.Data.dll</HintPath>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
  <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{ACC03E43-6F1E-1FC6-5BA3-747C3BD7EB7D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
