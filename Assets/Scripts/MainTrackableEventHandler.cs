@@ -4,15 +4,9 @@ All Rights Reserved.
 Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
 
-//using Mono.Data.Sqlite;
-//using Mono.Data.Tds;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Configuration;
-//using System.Data;
-//using System.Net.Sockets;
-//using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,7 +21,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool foundedTarget = true;
+    private bool foundedTarget = false;
     private string targetFoundName;
 
     private string sql;
@@ -62,8 +56,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-
-        OnTrackingFound();
     }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -81,8 +73,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     {
         if(newStatus == TrackableBehaviour.Status.DETECTED || 
             newStatus == TrackableBehaviour.Status.TRACKED ||
-            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED ||
-            foundedTarget == true)
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             modelDictionary = new Dictionary<string, string>();
             foundedTarget = true;
@@ -104,9 +95,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private void OnTrackingFound()
     {
         targetFoundName = mTrackableBehaviour.TrackableName;
-        targetFoundName = "crane_step_00";
-        //getModel(targetFoundName);
-
+        GettingModels gettingModels = new GettingModels();
+        modelDictionary = gettingModels.getModel(targetFoundName);
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
     }
 
@@ -125,11 +115,16 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
         GUILayout.BeginVertical("Box");
-/*
+
+  
+
         if(modelDictionary.Count != 0){
             selImgSize = modelDictionary.Count;
+            Debug.Log("Size of Model Dictionary:  " + selImgSize);
+
         }
 
+/*
         counter = 0;
 
         //selection grid begins
@@ -146,8 +141,10 @@ public class MainTrackableEventHandler : MonoBehaviour,
         if (GUILayout.Button("Start"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
-        GUILayout.EndVertical();        
-*/
+        GUILayout.EndVertical();  
+
+        */      
+
     }
 
 
@@ -162,47 +159,4 @@ public class MainTrackableEventHandler : MonoBehaviour,
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model.", windowStyle);
         }
     }    
-/*
-    public void getModel(string stepName){
-        string connection = "URI=file:" + Application.dataPath + "/OrigamiGuruDB"; //Path to database.
-        IDbConnection db_connection;
-
-        db_connection = (IDbConnection) new SqliteConnection(connection);
-        db_connection.Open();
-        IDbCommand db_command = db_connection.CreateCommand();  
-
-        sql = @"SELECT DISTINCT Models.model_name, Models.model_scene_name
-                FROM Steps
-                INNER JOIN Models_Steps
-                ON Steps.step_id = Models_Steps.step_id
-                INNER JOIN Models
-                ON Models_Steps.model_id = Models.model_id
-                WHERE Steps.step_name = '" + stepName + "'";
-
-        db_command.CommandText = sql;
-        IDataReader reader = db_command.ExecuteReader();
-        
-		while(reader.Read()){
-            modelsName = reader.GetString(0);
-            modelsSceneName = reader.GetString(1);
-
-            Debug.Log("Query from database : model_name = " + modelsName + ", model_scene_name = " + modelsSceneName);
-
-            if(modelDictionary.ContainsKey(modelsName)){
-                Debug.Log("Model: " + modelsName + "is already in Dictionary.");
-            }
-
-            else{
-                modelDictionary.Add(modelsName, modelsSceneName);
-            }
-   		}
-
-        reader.Close();
-        reader = null;
-        db_command.Dispose();
-        db_command = null;
-        db_connection.Close();
-        db_connection = null;             
-    }
-*/
 }

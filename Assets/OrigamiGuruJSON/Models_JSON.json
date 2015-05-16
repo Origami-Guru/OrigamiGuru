@@ -1,0 +1,19 @@
+{ "models":
+[
+  {
+    "model_id":1,
+    "model_name":"Crane",
+    "model_scene_name":"crane_scene"
+  },
+  {
+    "model_id":2,
+    "model_name":"Fox",
+    "model_scene_name":"fox_scene"
+  },
+  {
+    "model_id":3,
+    "model_name":"Fish",
+    "model_scene_name":"fish_scene"
+  }
+]
+}
