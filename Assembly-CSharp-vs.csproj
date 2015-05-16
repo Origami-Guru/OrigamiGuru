@@ -111,7 +111,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ <HintPath>C:/Users/nut/workspace/OrigamiGuru/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="Qualcomm.Vuforia.UnityExtensions">
  <HintPath>/Users/gatukgl/Workspace/OrigamiGuru/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>

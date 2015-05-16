@@ -39,9 +39,8 @@ Global
 		{F3A781C2-62F0-A877-EE33-1286204289D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																GlobalSection(MonoDevelopProperties) = preSolution
 		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0

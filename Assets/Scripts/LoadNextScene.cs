@@ -419,8 +419,19 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel("Goldfish12");
 	}
+	public void LoadNextStepSceneManual2()
+	{
+		Application.LoadLevel("main_manual_2");
+	}
 
+	public void LoadNextStepSceneManual3()
+	{
+		Application.LoadLevel("main_manual_3");
+	}
 
-
+	public void LoadNextStepSceneManual()
+	{
+		Application.LoadLevel("main_manual");
+	}
 
 }
