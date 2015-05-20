@@ -18,7 +18,7 @@ public class SplashTimeOut : MonoBehaviour {
 		}
 		else{
 			if(isLogin == true){
-				Application.LoadLevel("main_menu_after_login");
+				Application.LoadLevel("main_menu_before_login");
 			}
 			else{
 				//Application.LoadLevel("register_and_login");

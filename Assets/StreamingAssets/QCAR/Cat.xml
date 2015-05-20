@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="cat_step_05_08" size="500.000000 402.000000" />
+    <ImageTarget name="cat_step_05_07" size="500.000000 410.000000" />
+    <ImageTarget name="cat_step_05_06" size="500.000000 412.000000" />
+    <ImageTarget name="cat_step_05_05" size="500.000000 407.000000" />
+    <ImageTarget name="cat_step_05_04" size="500.000000 409.000000" />
+    <ImageTarget name="cat_step_05_03" size="500.000000 397.000000" />
+    <ImageTarget name="cat_step_05_02" size="500.000000 402.000000" />
+    <ImageTarget name="cat_step_05_01" size="500.000000 397.000000" />
+    <ImageTarget name="cat_step_04_08" size="500.000000 422.000000" />
+    <ImageTarget name="cat_step_04_07" size="500.000000 431.000000" />
+    <ImageTarget name="cat_step_04_06" size="500.000000 420.000000" />
+    <ImageTarget name="cat_step_04_05" size="500.000000 432.000000" />
+    <ImageTarget name="cat_step_04_04" size="500.000000 426.000000" />
+    <ImageTarget name="cat_step_04_03" size="500.000000 424.000000" />
+    <ImageTarget name="cat_step_04_02" size="500.000000 426.000000" />
+    <ImageTarget name="cat_step_04_01" size="500.000000 427.000000" />
+    <ImageTarget name="cat_step_03_16" size="500.000000 307.000000" />
+    <ImageTarget name="cat_step_03_15" size="500.000000 311.000000" />
+    <ImageTarget name="cat_step_03_14" size="500.000000 331.000000" />
+    <ImageTarget name="cat_step_03_13" size="500.000000 326.000000" />
+    <ImageTarget name="cat_step_03_12" size="500.000000 312.000000" />
+    <ImageTarget name="cat_step_03_11" size="500.000000 313.000000" />
+    <ImageTarget name="cat_step_03_10" size="500.000000 311.000000" />
+    <ImageTarget name="cat_step_03_09" size="500.000000 314.000000" />
+    <ImageTarget name="cat_step_03_08" size="500.000000 309.000000" />
+    <ImageTarget name="cat_step_03_07" size="500.000000 306.000000" />
+    <ImageTarget name="cat_step_03_06" size="500.000000 322.000000" />
+    <ImageTarget name="cat_step_03_05" size="500.000000 314.000000" />
+    <ImageTarget name="cat_step_03_04" size="500.000000 306.000000" />
+    <ImageTarget name="cat_step_03_03" size="500.000000 309.000000" />
+    <ImageTarget name="cat_step_03_02" size="500.000000 308.000000" />
+    <ImageTarget name="cat_step_03_01" size="500.000000 323.000000" />
+    <ImageTarget name="cat_step_02_04" size="500.000000 286.000000" />
+    <ImageTarget name="cat_step_02_03" size="500.000000 247.000000" />
+    <ImageTarget name="cat_step_02_02" size="500.000000 247.000000" />
+    <ImageTarget name="cat_step_02_01" size="500.000000 248.000000" />
+    <ImageTarget name="cat_step_01_04" size="500.000000 286.000000" />
+    <ImageTarget name="cat_step_01_03" size="500.000000 288.988098" />
+    <ImageTarget name="cat_step_01_02" size="500.000000 247.000000" />
+    <ImageTarget name="cat_step_01_01" size="500.000000 255.905518" />
+  </Tracking>
+</QCARConfig>

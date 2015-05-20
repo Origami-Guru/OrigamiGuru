@@ -15,11 +15,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #region PRIVATE_MEMBER_VARIABLES
  
     private TrackableBehaviour mTrackableBehaviour;
-    private bool isChooseModel = true;                 //this variable means user does/doesn't choose origami model to fold.
-    private bool showPopupWindow = false;
-    private bool createButton = false;
 
-    
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
@@ -69,34 +65,25 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     private void OnTrackingFound()
     {
         //user used to choose origami model to fold.
-        if(isChooseModel == true)
+
+        Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+        Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+
+        // Enable rendering:
+        foreach (Renderer component in rendererComponents)
         {
-            Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-            Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-            // Enable rendering:
-            foreach (Renderer component in rendererComponents)
-            {
-                component.enabled = true;
-            }
-
-            // Enable colliders:
-            foreach (Collider component in colliderComponents)
-            {
-                component.enabled = true;
-            }
-
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+            component.enabled = true;
         }
-        //user doesn't used to choose origami model to fold.
-        else
+
+        // Enable colliders:
+        foreach (Collider component in colliderComponents)
         {
-            //user choose origami model method.
-            showPopupWindow = true;
-            Debug.Log("User should choose any model first!!!!!!!!");   
+            component.enabled = true;
         }
+
+        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+        
     }
-
 
     private void OnTrackingLost()
     {
@@ -119,24 +106,4 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     }
 
     #endregion // PRIVATE_METHODS
-
-
-    private void chooseModelContent(int windowID){
-        createButton = true;
-
-        GUI.Button(new Rect(10,30,80,20), "Choose Crane");
-
-        if(isChooseModel == false){
-            isChooseModel = true;
-        }
-    }
-
-    private void OnGUI(){
-        Rect WindowRect = new Rect(20, 20, 120, 50);
-        if(showPopupWindow == true){
-            GUI.Window(1, WindowRect, chooseModelContent, "Please choose a origami model");
-        }
-
-    }
-
 }
