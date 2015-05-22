@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class LoadNextScene : MonoBehaviour {
@@ -433,5 +433,21 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel("main_manual");
 	}
+
+	public void LoadNextStepSceneHome ()
+	{
+		Application.LoadLevel ("main_menu_after_login_wt_fb");
+	}
+
+	public void LoadNextStepSceneMenu ()
+	{
+		Application.LoadLevel ("menu");
+	}
+
+	public void LoadNextStepSceneResume ()
+	{
+
+	}
+
 
 }
