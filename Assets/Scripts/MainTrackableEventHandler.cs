@@ -38,6 +38,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle fontStyle;
     public GUIStyle buttonStyle;
     public GUIStyle gridviewStyle;
+    public GUIStyle headerStyle;
 
     //custom grid
     public int selGridInt = 0;
@@ -154,7 +155,14 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         Rect WindowRect = new Rect(30, 30, 540, 984);
+        Rect boxAppHeader = new Rect(0, 0, Screen.width, 100);
+
+        //This is always shown on head of AR Camera.
+        GUI.Box (boxAppHeader, "AR Camera", headerStyle);
+
+
         
+        //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
             GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model.", windowStyle);
         }
