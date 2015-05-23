@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class LoadNextScene : MonoBehaviour {
+
+
 	public void LoadNextStepFish1()
 	{
 		Application.LoadLevel("Fish01");
@@ -443,12 +445,6 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel ("menu");
 	}
-
-	public void LoadNextStepSceneResume ()
-	{
-
-	}
-
 	public void LoadNextStepSceneCatDetect()
 	{
 		Application.LoadLevel("cat_scene");
@@ -473,4 +469,25 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel("pigeon_scene");
 	}
+
+
+
+	
+
+	static int previously = -1;
+	
+	void OnLevelWasLoaded () 
+	{
+		if(Application.loadedLevelName != "menu")
+		{
+			previously = Application.loadedLevel;
+		}
+	}
+	public void LoadNextStepSceneResume ()
+	{
+		Application.LoadLevel(previously);
+	}
+
+
 }
+
