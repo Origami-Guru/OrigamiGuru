@@ -155,10 +155,14 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         Rect WindowRect = new Rect(30, 30, 540, 984);
-        Rect boxAppHeader = new Rect(0, 0, Screen.width, 100);
+        //Rect homeButtRect = new Rect(0, 0, 600, 100);
+        //Rect circleReScanRect = new Rect(0, 0, 600, 100);
+
 
         //This is always shown on head of AR Camera.
-        GUI.Box (boxAppHeader, "AR Camera", headerStyle);
+        GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
+        //GUI.Button(homeButtRect, "Home", homeButtStyle)
+        //GUI.Box(circleReScanRect), "Re-Scan", circleReScanStyle); 
 
 
         
