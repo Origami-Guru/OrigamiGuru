@@ -445,13 +445,40 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel ("menu");
 	}
+	public void LoadNextStepSceneCatDetect()
+	{
+		Application.LoadLevel("cat_scene");
+	}
+	public void LoadNextStepSceneCraneDetect()
+	{
+		Application.LoadLevel("crane_scene");
+	}
+	public void LoadNextStepSceneDolphinDetect()
+	{
+		Application.LoadLevel("dolphin_scene");
+	}
+	public void LoadNextStepSceneFishDetect()
+	{
+		Application.LoadLevel("fish_scene");
+	}
+	public void LoadNextStepSceneFoxDetect()
+	{
+		Application.LoadLevel("fox_scene");
+	}
+	public void LoadNextStepScenePigeonDetect()
+	{
+		Application.LoadLevel("pigeon_scene");
+	}
 
+
+
+	
 
 	static int previously = -1;
 	
 	void OnLevelWasLoaded () 
 	{
-		if(Application.loadedLevel != 110)
+		if(Application.loadedLevelName != "menu")
 		{
 			previously = Application.loadedLevel;
 		}
@@ -462,5 +489,5 @@ public class LoadNextScene : MonoBehaviour {
 	}
 
 
-
 }
+
