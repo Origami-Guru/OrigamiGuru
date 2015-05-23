@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class LoadNextScene : MonoBehaviour {
+
+
 	public void LoadNextStepFish1()
 	{
 		Application.LoadLevel("Fish01");
@@ -444,10 +446,21 @@ public class LoadNextScene : MonoBehaviour {
 		Application.LoadLevel ("menu");
 	}
 
+
+	static int previously = -1;
+	
+	void OnLevelWasLoaded () 
+	{
+		if(Application.loadedLevel != 110)
+		{
+			previously = Application.loadedLevel;
+		}
+	}
 	public void LoadNextStepSceneResume ()
 	{
-
+		Application.LoadLevel(previously);
 	}
+
 
 
 }
