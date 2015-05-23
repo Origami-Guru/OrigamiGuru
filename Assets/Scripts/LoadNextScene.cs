@@ -449,5 +449,28 @@ public class LoadNextScene : MonoBehaviour {
 
 	}
 
-
+	public void LoadNextStepSceneCatDetect()
+	{
+		Application.LoadLevel("cat_scene");
+	}
+	public void LoadNextStepSceneCraneDetect()
+	{
+		Application.LoadLevel("crane_scene");
+	}
+	public void LoadNextStepSceneDolphinDetect()
+	{
+		Application.LoadLevel("dolphin_scene");
+	}
+	public void LoadNextStepSceneFishDetect()
+	{
+		Application.LoadLevel("fish_scene");
+	}
+	public void LoadNextStepSceneFoxDetect()
+	{
+		Application.LoadLevel("fox_scene");
+	}
+	public void LoadNextStepScenePigeonDetect()
+	{
+		Application.LoadLevel("pigeon_scene");
+	}
 }
