@@ -161,7 +161,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         Rect WindowRect = new Rect(30, 30, 540, 984);
         Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
         Rect homeButtRect = new Rect(20, 10, 70, 70);
-        Rect cameraTipsRect = new Rect(0, 400, 400, 100);
+        Rect cameraTipsRect = new Rect(0, 400, 500, 100);
         Rect cameraTipsCloseButtRect = new Rect(300, 380, 60, 60);
 
 
@@ -172,7 +172,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         }
 
 
-        if(showCameraTips == true){
+        while(showCameraTips){
             GUI.Label(cameraTipsRect, "Point the camera to the origami paper.", cameraTipsStyle);
             if(GUI.Button(cameraTipsCloseButtRect, "", cameraTipsCloseButtStyle)){
                 Debug.Log("user click close button");
