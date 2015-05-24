@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="foxface_step_04_08" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_07" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_06" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_05" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_04" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_03" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_02" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_04_01" size="500.000000 500.000000" />
+    <ImageTarget name="foxface_step_03_16" size="500.000000 326.000000" />
+    <ImageTarget name="foxface_step_03_15" size="500.000000 330.000000" />
+    <ImageTarget name="foxface_step_03_14" size="500.000000 356.000000" />
+    <ImageTarget name="foxface_step_03_13" size="500.000000 327.000000" />
+    <ImageTarget name="foxface_step_03_12" size="500.000000 333.000000" />
+    <ImageTarget name="foxface_step_03_11" size="500.000000 338.000000" />
+    <ImageTarget name="foxface_step_03_10" size="500.000000 334.000000" />
+    <ImageTarget name="foxface_step_03_09" size="500.000000 340.000000" />
+    <ImageTarget name="foxface_step_03_08" size="500.000000 329.000000" />
+    <ImageTarget name="foxface_step_03_07" size="500.000000 337.000000" />
+    <ImageTarget name="foxface_step_03_06" size="500.000000 326.000000" />
+    <ImageTarget name="foxface_step_03_05" size="500.000000 337.000000" />
+    <ImageTarget name="foxface_step_03_04" size="500.000000 323.000000" />
+    <ImageTarget name="foxface_step_03_03" size="500.000000 333.000000" />
+    <ImageTarget name="foxface_step_03_02" size="500.000000 332.000000" />
+    <ImageTarget name="foxface_step_03_01" size="500.000000 366.000000" />
+    <ImageTarget name="foxface_step_02_08" size="500.000000 136.000000" />
+    <ImageTarget name="foxface_step_02_07" size="500.000000 141.000000" />
+    <ImageTarget name="foxface_step_02_06" size="500.000000 1736.111084" />
+    <ImageTarget name="foxface_step_02_05" size="500.000000 136.000000" />
+    <ImageTarget name="foxface_step_02_04" size="500.000000 139.000000" />
+    <ImageTarget name="foxface_step_02_03" size="500.000000 129.000000" />
+    <ImageTarget name="foxface_step_02_02" size="500.000000 139.000000" />
+    <ImageTarget name="foxface_step_02_01" size="500.000000 126.000000" />
+    <ImageTarget name="foxface_step_01_04" size="500.000000 286.000000" />
+    <ImageTarget name="foxface_step_01_03" size="500.000000 288.988098" />
+    <ImageTarget name="foxface_step_01_02" size="500.000000 247.000000" />
+    <ImageTarget name="foxface_step_01_01" size="500.000000 255.905518" />
+  </Tracking>
+</QCARConfig>
