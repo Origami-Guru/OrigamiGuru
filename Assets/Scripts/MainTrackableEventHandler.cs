@@ -168,17 +168,11 @@ public class MainTrackableEventHandler : MonoBehaviour,
         //This is always shown on head of AR Camera.
         GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
         if(GUI.Button(homeButtRect, "", homeButtStyle)){
-            Application.LoadLevel("main_menu_after_login_wt_fb");
+			Application.LoadLevel("main_menu_before_login");
         }
 
 
-        while(showCameraTips){
-            GUI.Label(cameraTipsRect, "Point the camera to the origami paper.", cameraTipsStyle);
-            if(GUI.Button(cameraTipsCloseButtRect, "", cameraTipsCloseButtStyle)){
-                Debug.Log("user click close button");
-                showCameraTips = false;
-            }
-        }
+       
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
