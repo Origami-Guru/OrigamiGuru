@@ -85,7 +85,6 @@
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
      <Compile Include="Assets\Scripts\TrackableList.cs" />
-     <Compile Include="Assets\Scripts\fixed_ui.cs" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Foxface.xml" />
      <None Include="Assets\link.xml" />

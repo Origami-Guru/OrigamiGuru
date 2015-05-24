@@ -469,6 +469,18 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel("pigeon_scene");
 	}
+	public void LoadNextStepSceneFoxFaceDetect()
+	{
+		Application.LoadLevel("fox_face_scene");
+	}
+	public void LoadNextStepSceneMainManuDectect()
+	{
+		Application.LoadLevel("main_manu_detect");
+	}
+	public void LoadNextStepSceneMainManuDectect2()
+	{
+		Application.LoadLevel("main_manu_detect_2");
+	}
 
 
 
