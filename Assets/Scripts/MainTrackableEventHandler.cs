@@ -23,6 +23,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
     private bool foundedTarget = false;
     private string targetFoundName;
+    private bool showCameraTips = true;
 
     private string sql;
     private string modelsName;
@@ -39,6 +40,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle buttonStyle;
     public GUIStyle gridviewStyle;
     public GUIStyle headerStyle;
+    public GUIStyle homeButtStyle;
+    public GUIStyle cameraTipsStyle;
 
     //custom grid
     public int selGridInt = 0;
@@ -77,12 +80,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             modelDictionary = new Dictionary<string, string>();
+            showCameraTips = false;
             foundedTarget = true;
             OnTrackingFound();
         }
         else
         {
             OnTrackingLost();
+            showCameraTips = true;
+
         }
     }
 
@@ -155,16 +161,20 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         Rect WindowRect = new Rect(30, 30, 540, 984);
-        //Rect homeButtRect = new Rect(0, 0, 600, 100);
-        //Rect circleReScanRect = new Rect(0, 0, 600, 100);
+        Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
+        Rect homeButtRect = new Rect(20, 10, 70, 70);
+        Rect cameraTipsRect = new Rect(0, 100, 600, 1000);
 
 
         //This is always shown on head of AR Camera.
         GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
-        //GUI.Button(homeButtRect, "Home", homeButtStyle)
-        //GUI.Box(circleReScanRect), "Re-Scan", circleReScanStyle); 
+        if(GUI.Button(homeButtRect, "", homeButtStyle)){
+            Application.LoadLevel("main_menu_after_login_wt_fb");
+        }
 
-
+        if(showCameraTips == true){
+            GUI.Label(cameraTipsRect, "Point the camera to the origami paper.", cameraTipsStyle);
+        }
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
