@@ -42,6 +42,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle headerStyle;
     public GUIStyle homeButtStyle;
     public GUIStyle cameraTipsStyle;
+    public GUIStyle cameraTipsCloseButtStyle;
 
     //custom grid
     public int selGridInt = 0;
@@ -80,15 +81,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             modelDictionary = new Dictionary<string, string>();
-            showCameraTips = false;
             foundedTarget = true;
             OnTrackingFound();
         }
         else
         {
             OnTrackingLost();
-            showCameraTips = true;
-
         }
     }
 
@@ -163,7 +161,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
         Rect WindowRect = new Rect(30, 30, 540, 984);
         Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
         Rect homeButtRect = new Rect(20, 10, 70, 70);
-        Rect cameraTipsRect = new Rect(0, 100, 600, 1000);
+        Rect cameraTipsRect = new Rect(0, 400, 400, 100);
+        Rect cameraTipsCloseButtRect = new Rect(300, 380, 60, 60);
 
 
         //This is always shown on head of AR Camera.
@@ -172,8 +171,13 @@ public class MainTrackableEventHandler : MonoBehaviour,
             Application.LoadLevel("main_menu_after_login_wt_fb");
         }
 
+
         if(showCameraTips == true){
             GUI.Label(cameraTipsRect, "Point the camera to the origami paper.", cameraTipsStyle);
+            if(GUI.Button(cameraTipsCloseButtRect, "", cameraTipsCloseButtStyle)){
+                Debug.Log("user click close button");
+                showCameraTips = false;
+            }
         }
         
         //This is only shown when the user point the camera to the origami paper. 
