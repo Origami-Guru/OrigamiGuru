@@ -56,6 +56,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\StreamingAssets\QCAR\Cat.xml" />
      <None Include="Assets\readme_SDK.txt" />
+     <None Include="Assets\StreamingAssets\QCAR\Fox_face.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Pigeon.xml" />
      <None Include="Assets\StreamingAssets\QCAR\OrigamiTargetAll.xml" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />

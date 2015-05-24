@@ -1,13 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoadNextScene.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\LoadNextScene.cs" Line="418" Column="38" />
-=======
-      <File FileName="Assets\Scripts\LoadNextScene.cs" Line="476" Column="1" />
-      <File FileName="Assets\Scripts\SplashTimeOut.cs" Line="21" Column="53" />
->>>>>>> 8e7fbd27b7e08a22923773ef28939192f10ad8e2
+      <File FileName="Assets\Scripts\LoadNextScene.cs" Line="30" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
