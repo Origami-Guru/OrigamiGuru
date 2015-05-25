@@ -59,6 +59,7 @@
      <None Include="Assets\StreamingAssets\QCAR\Fox_face.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Pigeon.xml" />
      <None Include="Assets\StreamingAssets\QCAR\OrigamiTargetAll.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\crane00.xml" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
      <None Include="Assets\font\RobotoCondensed\LICENSE.txt" />
