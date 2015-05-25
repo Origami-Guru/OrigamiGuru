@@ -52,6 +52,7 @@
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Foxface.xml" />
      <None Include="Assets\link.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\FoxfaceFoxCat.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\StreamingAssets\QCAR\Dolphin.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
