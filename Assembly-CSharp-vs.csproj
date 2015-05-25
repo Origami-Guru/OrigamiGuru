@@ -78,13 +78,13 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Scripts\AutoFading.cs" />
+     <Compile Include="Assets\Scripts\GUIManager.cs" />
      <Compile Include="Assets\Scripts\GettingModels.cs" />
      <Compile Include="Assets\Scripts\LoadCameraDetectorScene.cs" />
      <Compile Include="Assets\Scripts\LoadNextScene.cs" />
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
-     <Compile Include="Assets\Scripts\TrackableList.cs" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Foxface.xml" />
      <None Include="Assets\link.xml" />
