@@ -107,6 +107,39 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
+<<<<<<< Updated upstream
+=======
+	public void OnGUI(){
+		float scaleX = (float)(Screen.width)/600.0f;
+		float scaleY = (float)(Screen.height)/1024.0f;
+		
+		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
+		Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
+		Rect homeButtRect = new Rect(20, 10, 70, 70);
+		Rect homeButtRect2 = new Rect(50, 100, 70, 70);
+
+		GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
+		if(GUI.Button(homeButtRect, "", homeButtStyle)){
+			Application.LoadLevel("main_menu_before_login");
+		}
+		if(GUI.Button(homeButtRect2, "", homeButtStyle)){
+			nextModel();
+			Debug.Log("askdfl;kas;dfkl;asdkf");
+		}
+
+	}
+	public void nextModel(){
+		string messageTrackable =mTrackableBehaviour.TrackableName;
+		GameObject targetObject;
+			 
+		targetObject = GameObject.Find (messageTrackable);
+		if (targetObject != null){
+			targetObject.SetActive(false);
+			Debug.Log ("LostLostLostLostLostLostLostLostLostLostLostLostLostLost");
+		}
+	}
+
+>>>>>>> Stashed changes
 
     #endregion // PRIVATE_METHODS
 }
