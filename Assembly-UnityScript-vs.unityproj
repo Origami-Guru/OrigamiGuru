@@ -50,6 +50,7 @@
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Foxface.xml" />
      <None Include="Assets\link.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\FoxfaceFoxCat.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\StreamingAssets\QCAR\Dolphin.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
@@ -59,6 +60,7 @@
      <None Include="Assets\StreamingAssets\QCAR\Fox_face.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Pigeon.xml" />
      <None Include="Assets\StreamingAssets\QCAR\OrigamiTargetAll.xml" />
+     <None Include="Assets\StreamingAssets\QCAR\crane00.xml" />
      <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
      <None Include="Assets\font\RobotoCondensed\LICENSE.txt" />
