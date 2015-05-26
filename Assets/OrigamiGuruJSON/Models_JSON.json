@@ -14,6 +14,26 @@
     "model_id":3,
     "model_name":"Fish",
     "model_scene_name":"fish_scene"
-  }
+  },
+  {
+    "model_id":4,
+    "model_name":"Cat",
+    "model_scene_name":"cat_scene"
+  },  
+  {
+    "model_id":5,
+    "model_name":"Dolphin",
+    "model_scene_name":"dolphin_scene"
+  },
+  {
+    "model_id":6,
+    "model_name":"Fox Face",
+    "model_scene_name":"fox_face"
+  },
+  {
+    "model_id":7,
+    "model_name":"Ct",
+    "model_scene_name":"fox_face"
+  },
 ]
 }
