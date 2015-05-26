@@ -21,11 +21,6 @@
     "model_scene_name":"cat_scene"
   },  
   {
-    "model_id":5,
-    "model_name":"Dolphin",
-    "model_scene_name":"dolphin_scene"
-  },
-  {
     "model_id":6,
     "model_name":"Fox Face",
     "model_scene_name":"fox_face"
