@@ -18,8 +18,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #region PRIVATE_MEMBER_VARIABLES
  
     private TrackableBehaviour mTrackableBehaviour;
-	public GUIStyle homeButtStyle;
-	public GUIStyle headerStyle;
+
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
@@ -108,18 +107,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
-	public void OnGUI(){
-		float scaleX = (float)(Screen.width)/600.0f;
-		float scaleY = (float)(Screen.height)/1024.0f;
-		
-		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-		Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
-		Rect homeButtRect = new Rect(20, 10, 70, 70);
 
-		GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
-		if(GUI.Button(homeButtRect, "", homeButtStyle)){
-			Application.LoadLevel("main_menu_before_login");
-		}
-	}
     #endregion // PRIVATE_METHODS
 }

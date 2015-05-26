@@ -805,6 +805,10 @@
       "step_name":"fish_step_04_16",
       "step_description":""
     },
+
+
+
+
     {
       "step_id":162,
       "step_name":"cat_step_01_01",
@@ -1186,5 +1190,37 @@
       "step_name":"fox_face_step_04_08",
       "step_description":""
     },
+
+    {
+      "step_id":386,
+      "step_name":"pigeon_step_02_01",
+      "step_description":""
+    },
+    {
+      "step_id":387,
+      "step_name":"pigeon_step_02_02",
+      "step_description":""
+    },
+    {
+      "step_id":388,
+      "step_name":"pigeon_step_02_03",
+      "step_description":""
+    },
+    {
+      "step_id":389,
+      "step_name":"pigeon_step_02_04",
+      "step_description":""
+    },
+    {
+      "step_id":390,
+      "step_name":"pigeon_step_03_01",
+      "step_description":""
+    },
+    {
+      "step_id":391,
+      "step_name":"pigeon_step_03_02",
+      "step_description":""
+    },
+
   ]
 }
