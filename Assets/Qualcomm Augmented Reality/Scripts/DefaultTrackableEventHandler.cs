@@ -107,8 +107,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
-<<<<<<< Updated upstream
-=======
+
 	public void OnGUI(){
 		float scaleX = (float)(Screen.width)/600.0f;
 		float scaleY = (float)(Screen.height)/1024.0f;
@@ -138,8 +137,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 			Debug.Log ("LostLostLostLostLostLostLostLostLostLostLostLostLostLost");
 		}
 	}
-
->>>>>>> Stashed changes
 
     #endregion // PRIVATE_METHODS
 }
