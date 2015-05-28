@@ -29,8 +29,8 @@ public class GUIManager : MonoBehaviour {
         
         Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
         Rect homeButtRect = new Rect(20, 10, 70, 70);
-        Rect cameraTipsRect = new Rect(0, 400, 500, 100);
-        Rect cameraTipsCloseButtRect = new Rect(300, 380, 60, 60);
+        Rect cameraTipsRect = new Rect(50, 500, 525, 120);
+        Rect cameraTipsCloseButtRect = new Rect(280, 470, 60, 60);
 
         //This is always shown on head of AR Camera.
         GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);

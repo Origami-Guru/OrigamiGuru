@@ -113,19 +113,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 		float scaleY = (float)(Screen.height)/1024.0f;
 		
 		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-		Rect boxAppHeaderRect = new Rect(0, 0, 600, 100);
-		Rect homeButtRect = new Rect(20, 10, 70, 70);
-		Rect homeButtRect2 = new Rect(50, 100, 70, 70);
-
-		GUI.Box(boxAppHeaderRect, "AR Camera", headerStyle);
-		if(GUI.Button(homeButtRect, "", homeButtStyle)){
-			Application.LoadLevel("main_menu_before_login");
-		}
-		if(GUI.Button(homeButtRect2, "", homeButtStyle)){
-			nextModel();
-			Debug.Log("askdfl;kas;dfkl;asdkf");
-		}
-
 	}
 	public void nextModel(){
 		string messageTrackable =mTrackableBehaviour.TrackableName;
