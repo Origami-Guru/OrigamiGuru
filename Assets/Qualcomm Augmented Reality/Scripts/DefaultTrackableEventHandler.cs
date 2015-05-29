@@ -4,7 +4,10 @@ All Rights Reserved.
 Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
@@ -19,20 +22,14 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private string suggestTextFromJSON;
-    private Text suggestText;
+    public Text suggestText;
     private GameObject canvas;
+    private GameObject GettingSuggestTxtScript;
     private string targetFoundName;
-    private int modelID;
-
-    private bool enableSuggestText = false;
+    private string modelSceneName;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
-    #region PUBLIC_MEMBER_VARIABLES
- 
-    public GUIStyle suggestLabelStyle;
-
-    #endregion // PUBLIC_MEMBER_VARIABLES
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
     
@@ -44,22 +41,17 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-        /*
+
         canvas = GameObject.Find("Canvas");
         suggestText = canvas.GetComponentInChildren<Text>();
-        modelID = Convert.ToInt32(suggestText);
-        Debug.Log("model id is " + modelID + "suggestText is " + suggestText.ToString());
-        */
+        modelSceneName = Application.loadedLevelName;
+
+        Debug.Log("modelscenename is  " + modelSceneName);
     }
 
-    /*
     void Update(){
-        if(enableSuggestText){
-            GettingStepSuggestText gettingStep = new GettingStepSuggestText();
-            suggestTextFromJSON = gettingStep.getSuggestText(modelID, targetFoundName);
-            suggestText.text = suggestTextFromJSON;
-        }
-    } */
+
+    }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -73,6 +65,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
     {
+
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
@@ -92,9 +85,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
     private void OnTrackingFound()
     {
-        //user used to choose origami model to fold.
-        targetFoundName = mTrackableBehaviour.TrackableName;
-
         Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
         Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
@@ -111,8 +101,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         }
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-        
-        enableSuggestText = true;
+
+        targetFoundName = mTrackableBehaviour.TrackableName;
+           
+        getSuggestText(modelSceneName);
     }
 
     private void OnTrackingLost()
@@ -135,11 +127,22 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
 
+    private void getSuggestText(string modelSceneName){
+        GettingStepSuggestText gettingSuggestText = new GettingStepSuggestText();
+
+        switch(modelSceneName){
+            case "cat_scene": {
+                suggestTextFromJSON = gettingSuggestText.catSuggestText(targetFoundName);
+                break;
+            }
+        }
+
+        suggestText.text = suggestTextFromJSON ;
+    }
+
 	public void OnGUI(){
 		float scaleX = (float)(Screen.width)/600.0f;
 		float scaleY = (float)(Screen.height)/1024.0f;
-
-        Rect suggestLabelRect = new Rect(50, 500, 400, 120);
 		
 		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
     }
