@@ -28,6 +28,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     private string targetFoundName;
     private string modelSceneName;
     private GameObject targetObject;
+    private SpriteRenderer[] modelImages;
 
     private bool showSuggestText = false;
     private bool showButtonNext = false;
@@ -38,7 +39,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     public GUIStyle buttonBackStyle;
 
     private Rect suggestTextRect = new Rect(50, 800, 500, 200);
-    private Rect buttonNextRect = new Rect(500, 450, 70, 70);
+    private Rect buttonNextRect = new Rect(500, 450, 100, 100);
     private Rect buttonBackRect = new Rect(10, 450, 70, 70);
 
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -54,14 +55,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-/*
-        canvas = GameObject.Find("Canvas");
-        suggestText = canvas.GetComponentInChildren<Text>();
 
-        Debug.Log("modelscenename is  " + modelSceneName);
-*/
         modelSceneName = Application.loadedLevelName;
-
     }
 
 
@@ -105,17 +100,21 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
         // Enable rendering:
+        rendererComponents[0].enabled = true;
+        rendererComponents[1].enabled = false;
+
+        /*
         foreach (Renderer component in rendererComponents)
         {
             component.enabled = true;
         }
-
+        */
         // Enable colliders:
         foreach (Collider component in colliderComponents)
         {
             component.enabled = true;
         }
-
+        
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
 
         targetFoundName = mTrackableBehaviour.TrackableName;
@@ -166,9 +165,15 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         
         if(showButtonNext == true){
+            targetObject = GameObject.Find(targetFoundName);
+            modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
+            
             if(GUI.Button(buttonNextRect, "", buttonNextStyle)){
-                //targetObject = GameObject.Find(targetFoundName);
-                //targetObject.SetActive(false);
+                foreach(SpriteRenderer modelimage in modelImages){
+                    Debug.Log("model image are " + modelimage);
+                }
+                modelImages[0].enabled = false;
+                modelImages[1].enabled = true;
             }
         }
 
