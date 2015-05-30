@@ -11,9 +11,6 @@ public class GettingModels : MonoBehaviour {
 	public TextAsset modelStepJSON;
 	public TextAsset twoDimensionStepJSON;
 
-	void Start(){
-
-	}
 
 	public Dictionary<string, string> getModel(string targetFoundName){
 		var stepParsed = JSON.Parse(stepJSON.text);
@@ -76,59 +73,5 @@ public class GettingModels : MonoBehaviour {
 		}
 
 		return ModelsDictionary;
-	}
-
-	public string getSuggestText(string modelSceneName, string targetFoundName){
-		var stepParsed = JSON.Parse(stepJSON.text);
-		var modelParsed = JSON.Parse(modelJSON.text);
-		var modelStepParsed = JSON.Parse(modelStepJSON.text);
-		
-		string stepNameOfSteps;
-		int stepIDOfSteps = 0;
-		int stepIdOfModelStep;
-		int modelIdOfModelStep;
-		int modelIdOfModel = 0;
-		string modelSceneNameOfModel;
-		string suggestText = "";
-
-		int numOfSteps;
-		int numOfModelSteps;
-		int numOfModels;
-
-		numOfSteps = stepParsed["steps"].Count;
-		numOfModelSteps = modelStepParsed["models_steps"].Count;
-		numOfModels = modelParsed["models"].Count;
-		
-		Debug.Log("Try to getting JSON Data");	
-
-		for(int i = 0; i < numOfSteps; i++){
-			stepNameOfSteps = stepParsed["steps"][i]["step_name"];
-
-			if(stepNameOfSteps.Equals(targetFoundName)){
-				stepIDOfSteps = stepParsed["steps"][i]["step_id"].AsInt;
-			}
-		}
-
-		for(int i = 0; i < numOfModels; i++){
-			modelSceneNameOfModel = modelParsed["models"][i]["model_scene_name"];
-
-			if(modelSceneNameOfModel.Equals(modelSceneName)){
-				modelIdOfModel = modelParsed["models"][i]["model_id"].AsInt;
-			}
-		}
-
-		if(stepIDOfSteps != 0){
-			for(int i = 0; i < numOfModelSteps; i++){
-				stepIdOfModelStep = modelStepParsed["models_steps"][i]["step_id"].AsInt;
-				modelIdOfModelStep = modelStepParsed["models_steps"][i]["model_id"].AsInt;
-				
-				if((stepIdOfModelStep == stepIDOfSteps) && (modelIdOfModelStep == modelIdOfModel)){
-					suggestText = modelStepParsed["models_steps"][i]["description"];
-					Debug.Log("!!!!!!!!!!!!!!!suggest text is " + suggestText);
-				}
-			}
-		}
-
-		return suggestText;	
 	}
 }
