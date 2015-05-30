@@ -103,7 +103,12 @@
      <Compile Include="Assets\Scripts\MainTrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Util.cs" />
+     <Compile Include="Assets\Scripts\tree_inspector.cs" />
+=======
      <Compile Include="Assets\Scripts\SwipeManager.cs" />
+>>>>>>> 660c88e6e942dd3be1817a3bc66c7bcaec110d1f
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
