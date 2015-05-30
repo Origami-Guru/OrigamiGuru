@@ -39,7 +39,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     public GUIStyle buttonBackStyle;
 
     private Rect suggestTextRect = new Rect(50, 800, 500, 200);
-    private Rect buttonNextRect = new Rect(500, 450, 100, 100);
+    private Rect buttonNextRect = new Rect(500, 450, 70, 70);
     private Rect buttonBackRect = new Rect(10, 450, 70, 70);
 
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -103,12 +103,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         rendererComponents[0].enabled = true;
         rendererComponents[1].enabled = false;
 
-        /*
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = true;
-        }
-        */
         // Enable colliders:
         foreach (Collider component in colliderComponents)
         {
@@ -142,6 +136,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         showButtonNext = false;
+        showButtonBack = false;
     }
 
     private string getSuggestText(string modelSceneName){
@@ -174,6 +169,23 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
                 }
                 modelImages[0].enabled = false;
                 modelImages[1].enabled = true;
+                showButtonNext = false;
+                showButtonBack = true;
+            }
+        }
+
+        if(showButtonBack == true){
+            targetObject = GameObject.Find(targetFoundName);
+            modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
+            
+            if(GUI.Button(buttonBackRect, "", buttonBackStyle)){
+                foreach(SpriteRenderer modelimage in modelImages){
+                    Debug.Log("model image are " + modelimage);
+                }
+                modelImages[0].enabled = true;
+                modelImages[1].enabled = false;
+                showButtonNext = true;
+                showButtonBack = false;
             }
         }
 
