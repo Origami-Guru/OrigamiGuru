@@ -147,6 +147,26 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
                 suggestTextFromJSON = gettingSuggestText.catSuggestText(targetFoundName);
                 break;
             }
+            case "crane_scene": {
+                suggestTextFromJSON = gettingSuggestText.craneSuggestText(targetFoundName);
+                break;
+            }
+            case "fish_scene": {
+                suggestTextFromJSON = gettingSuggestText.fishSuggestText(targetFoundName);
+                break;
+            }
+            case "fox_face_scene": {
+                suggestTextFromJSON = gettingSuggestText.foxfaceSuggestText(targetFoundName);
+                break;
+            }
+            case "fox_scene": {
+                suggestTextFromJSON = gettingSuggestText.foxSuggestText(targetFoundName);
+                break;
+            }
+            case "pigeon_scene": {
+                suggestTextFromJSON = gettingSuggestText.pigeonSuggestText(targetFoundName);
+                break;
+            }
         }
 
         suggestText = suggestTextFromJSON ;
