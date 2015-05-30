@@ -28,6 +28,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     private string targetFoundName;
     private string modelSceneName;
     private GameObject targetObject;
+    private SpriteRenderer[] modelImages;
 
     private bool showSuggestText = false;
     private bool showButtonNext = false;
@@ -54,14 +55,8 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-/*
-        canvas = GameObject.Find("Canvas");
-        suggestText = canvas.GetComponentInChildren<Text>();
 
-        Debug.Log("modelscenename is  " + modelSceneName);
-*/
         modelSceneName = Application.loadedLevelName;
-
     }
 
 
@@ -105,17 +100,15 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
         // Enable rendering:
-        foreach (Renderer component in rendererComponents)
-        {
-            component.enabled = true;
-        }
+        rendererComponents[0].enabled = true;
+        rendererComponents[1].enabled = false;
 
         // Enable colliders:
         foreach (Collider component in colliderComponents)
         {
             component.enabled = true;
         }
-
+        
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
 
         targetFoundName = mTrackableBehaviour.TrackableName;
@@ -143,6 +136,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         showButtonNext = false;
+        showButtonBack = false;
     }
 
     private string getSuggestText(string modelSceneName){
@@ -151,6 +145,26 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         switch(modelSceneName){
             case "cat_scene": {
                 suggestTextFromJSON = gettingSuggestText.catSuggestText(targetFoundName);
+                break;
+            }
+            case "crane_scene": {
+                suggestTextFromJSON = gettingSuggestText.craneSuggestText(targetFoundName);
+                break;
+            }
+            case "fish_scene": {
+                suggestTextFromJSON = gettingSuggestText.fishSuggestText(targetFoundName);
+                break;
+            }
+            case "fox_face_scene": {
+                suggestTextFromJSON = gettingSuggestText.foxfaceSuggestText(targetFoundName);
+                break;
+            }
+            case "fox_scene": {
+                suggestTextFromJSON = gettingSuggestText.foxSuggestText(targetFoundName);
+                break;
+            }
+            case "pigeon_scene": {
+                suggestTextFromJSON = gettingSuggestText.pigeonSuggestText(targetFoundName);
                 break;
             }
         }
@@ -166,9 +180,32 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
         
         if(showButtonNext == true){
+            targetObject = GameObject.Find(targetFoundName);
+            modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
+            
             if(GUI.Button(buttonNextRect, "", buttonNextStyle)){
-                //targetObject = GameObject.Find(targetFoundName);
-                //targetObject.SetActive(false);
+                foreach(SpriteRenderer modelimage in modelImages){
+                    Debug.Log("model image are " + modelimage);
+                }
+                modelImages[0].enabled = false;
+                modelImages[1].enabled = true;
+                showButtonNext = false;
+                showButtonBack = true;
+            }
+        }
+
+        if(showButtonBack == true){
+            targetObject = GameObject.Find(targetFoundName);
+            modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
+            
+            if(GUI.Button(buttonBackRect, "", buttonBackStyle)){
+                foreach(SpriteRenderer modelimage in modelImages){
+                    Debug.Log("model image are " + modelimage);
+                }
+                modelImages[0].enabled = true;
+                modelImages[1].enabled = false;
+                showButtonNext = true;
+                showButtonBack = false;
             }
         }
 

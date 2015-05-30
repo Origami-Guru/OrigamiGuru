@@ -104,6 +104,7 @@
      <Compile Include="Assets\Scripts\SampleButton.cs" />
      <Compile Include="Assets\Scripts\SplashTimeOut.cs" />
      <Compile Include="Assets\Scripts\SwipeManager.cs" />
+     <Compile Include="Assets\Scripts\Util.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\StreamingAssets\QCAR\Fish.xml" />
      <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
