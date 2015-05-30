@@ -22,11 +22,24 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
  
     private TrackableBehaviour mTrackableBehaviour;
     private string suggestTextFromJSON;
-    public Text suggestText;
+    private string suggestText;
     private GameObject canvas;
     private GameObject GettingSuggestTxtScript;
     private string targetFoundName;
     private string modelSceneName;
+    private GameObject targetObject;
+
+    private bool showSuggestText = false;
+    private bool showButtonNext = false;
+    private bool showButtonBack = false;
+
+    public GUIStyle suggestTextStyle;
+    public GUIStyle buttonNextStyle;
+    public GUIStyle buttonBackStyle;
+
+    private Rect suggestTextRect = new Rect(50, 800, 500, 200);
+    private Rect buttonNextRect = new Rect(500, 450, 70, 70);
+    private Rect buttonBackRect = new Rect(10, 450, 70, 70);
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -41,17 +54,16 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         }
-
+/*
         canvas = GameObject.Find("Canvas");
         suggestText = canvas.GetComponentInChildren<Text>();
-        modelSceneName = Application.loadedLevelName;
 
         Debug.Log("modelscenename is  " + modelSceneName);
+*/
+        modelSceneName = Application.loadedLevelName;
+
     }
 
-    void Update(){
-
-    }
 
     #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
@@ -71,10 +83,14 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             OnTrackingFound();
+            showButtonNext = true;
+            showSuggestText = true;
         }
         else
         {
             OnTrackingLost();
+            showButtonNext = false;
+            showSuggestText = false;
         }
     }
 
@@ -105,6 +121,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         targetFoundName = mTrackableBehaviour.TrackableName;
            
         getSuggestText(modelSceneName);
+        
     }
 
     private void OnTrackingLost()
@@ -125,9 +142,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         }
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+        showButtonNext = false;
     }
 
-    private void getSuggestText(string modelSceneName){
+    private string getSuggestText(string modelSceneName){
         GettingStepSuggestText gettingSuggestText = new GettingStepSuggestText();
 
         switch(modelSceneName){
@@ -137,26 +155,28 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
             }
         }
 
-        suggestText.text = suggestTextFromJSON ;
-    }
-
-	public void OnGUI(){
-		float scaleX = (float)(Screen.width)/600.0f;
-		float scaleY = (float)(Screen.height)/1024.0f;
-		
-		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
+        suggestText = suggestTextFromJSON ;
+        return suggestText;
     }
 	
-    public void nextModel(){
-		string messageTrackable = mTrackableBehaviour.TrackableName;
-		GameObject targetObject;
-			 
-		targetObject = GameObject.Find (messageTrackable);
-		if (targetObject != null){
-			targetObject.SetActive(false);
-			Debug.Log ("LostLostLostLostLostLostLostLostLostLostLostLostLostLost");
-		}
-	}
+    public void OnGUI(){
+        float scaleX = (float)(Screen.width)/600.0f;
+        float scaleY = (float)(Screen.height)/1024.0f;
+        
+        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
+        
+        if(showButtonNext == true){
+            if(GUI.Button(buttonNextRect, "", buttonNextStyle)){
+                //targetObject = GameObject.Find(targetFoundName);
+                //targetObject.SetActive(false);
+            }
+        }
+
+        if(showSuggestText == true){
+            suggestText = getSuggestText(modelSceneName);
+            GUI.Label(suggestTextRect, suggestText, suggestTextStyle);
+        }
+    }
 
     #endregion // PRIVATE_METHODS
 }
