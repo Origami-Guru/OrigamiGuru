@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 531cea64976484d529fe86459b4025c3
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - stepJSON: {instanceID: 0}
+  - modelJSON: {instanceID: 0}
+  - modelStepJSON: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

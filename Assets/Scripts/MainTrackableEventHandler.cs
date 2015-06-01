@@ -22,11 +22,13 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private TrackableBehaviour mTrackableBehaviour;
     private bool isChooseModel = false;                 //this variable means user does/doesn't choose origami model to fold.
     private bool foundedTarget = false;
-    private string targetFoundName;
+    private string targetFoundName = "";
 
     private string sql;
     private string modelsName;
     private string modelsSceneName;
+
+    private GameObject gameObject;
 
     private Dictionary<string, string> modelDictionary;     //dictionary to keep the query from the database for origami models
     
@@ -39,12 +41,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public GUIStyle buttonStyle;
     public GUIStyle gridviewStyle;
 
-
     //custom grid
     public int selGridInt = 0;
     public Texture[] selImage;
     private int selImgSize = 0;
     private int counter;
+    private GUIContent[] selContent;
 
     #endregion
 
@@ -56,6 +58,13 @@ public class MainTrackableEventHandler : MonoBehaviour,
         if (mTrackableBehaviour)
         {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
+        }
+    }
+
+    void Update(){
+        if(selGridInt != 0){
+            
+            Debug.Log(selGridInt);
         }
     }
 
@@ -83,6 +92,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         else
         {
             OnTrackingLost();
+            foundedTarget = false;
         }
     }
 
@@ -96,9 +106,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
     private void OnTrackingFound()
     {
         targetFoundName = mTrackableBehaviour.TrackableName;
-        GettingModels gettingModels = new GettingModels();
-        modelDictionary = gettingModels.getModel(targetFoundName);
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+
+        if(targetFoundName != null){    
+            modelDictionary = GettingModels.Instance.getModel(targetFoundName);
+        }
+
     }
 
 
@@ -115,37 +128,32 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
-        GUILayout.BeginVertical("Box");
 
-  
+        GUILayout.BeginVertical("Box");
 
         if(modelDictionary.Count != 0){
             selImgSize = modelDictionary.Count;
             Debug.Log("Size of Model Dictionary:  " + selImgSize);
-
         }
 
-/*
-        counter = 0;
-
         //selection grid begins
-
+        counter = 0;
         selImage = new Texture[selImgSize];
+        selContent = new GUIContent[selImgSize];
 
         foreach(KeyValuePair<string, string> md in modelDictionary){
-            selImage[counter] =  Resources.Load("'" + md.Key + "'") as Texture;
+            selImage[counter] =  Resources.Load<Texture>(md.Key);
+
+            Debug.Log("dictionary key: " + md.Key);
             counter += 1;
         }
 
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
-        
+
         if (GUILayout.Button("Start"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
         GUILayout.EndVertical();  
-
-        */      
-
     }
 
 
@@ -154,7 +162,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-        Rect WindowRect = new Rect(30, 30, 540, 984);
+        Rect WindowRect = new Rect(50, 200, 500, 500);
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){

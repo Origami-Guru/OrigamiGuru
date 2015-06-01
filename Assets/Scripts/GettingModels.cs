@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,31 @@ using SimpleJSON;
 
 
 public class GettingModels : MonoBehaviour {
+
+	// create public property of singleton object
+	public static GettingModels Instance {
+		get
+		{
+			// allow user only get
+			if (instance == null)
+			{
+				instance = GameObject.FindObjectOfType<GettingModels>();
+			}
+			return instance;
+		}
+	}
+
 	public TextAsset stepJSON;
 	public TextAsset modelJSON;
 	public TextAsset modelStepJSON;
-	public TextAsset twoDimensionStepJSON;
 
+	//This is Singleton Object
+	private static GettingModels instance;
+
+	private void Awake() 
+	{
+		instance = this;
+	}
 
 	public Dictionary<string, string> getModel(string targetFoundName){
 		var stepParsed = JSON.Parse(stepJSON.text);
@@ -65,13 +86,14 @@ public class GettingModels : MonoBehaviour {
 					if(queryModel == modelIdOfModel){
 						modelNameOfModel = modelParsed["models"][i]["model_name"];
 						modelSceneNameOfModel = modelParsed["models"][i]["model_scene_name"];
-
-						ModelsDictionary.Add(modelNameOfModel, modelSceneNameOfModel);
+						if(!ModelsDictionary.ContainsKey(modelNameOfModel)){
+							ModelsDictionary.Add(modelNameOfModel, modelSceneNameOfModel);
+						}
 					}
 				}
 			}
 		}
-
+		Debug.Log("model dictionary " + ModelsDictionary);
 		return ModelsDictionary;
 	}
 }
