@@ -64,7 +64,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     void Update(){
         if(selGridInt != 0){
             
-            Debug.Log(selGridInt);
+            //Debug.Log(selGridInt);
         }
     }
 
@@ -133,7 +133,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         if(modelDictionary.Count != 0){
             selImgSize = modelDictionary.Count;
-            Debug.Log("Size of Model Dictionary:  " + selImgSize);
         }
 
         //selection grid begins
@@ -143,14 +142,12 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         foreach(KeyValuePair<string, string> md in modelDictionary){
             selImage[counter] =  Resources.Load<Texture>(md.Key);
-
-            Debug.Log("dictionary key: " + md.Key);
             counter += 1;
         }
 
         selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
 
-        if (GUILayout.Button("Start"))
+        if (GUILayout.Button("OK!"))
             Debug.Log("You chose " + selImage[selGridInt]);
         
         GUILayout.EndVertical();  
@@ -162,7 +159,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-        Rect WindowRect = new Rect(50, 200, 500, 500);
+        Rect WindowRect = new Rect(50, 200, 500, 800);
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
