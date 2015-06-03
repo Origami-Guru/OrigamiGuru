@@ -117,7 +117,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
     private void OnTrackingLost()
     {
-        Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+        //Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
     }
 
     #endregion // PRIVATE_METHODS
@@ -162,7 +162,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
-        Rect WindowRect = new Rect(50, 200, 500, 500);
+        Rect WindowRect = new Rect(50, 200, 600,800);
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
