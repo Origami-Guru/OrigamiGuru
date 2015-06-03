@@ -438,7 +438,7 @@ public class LoadNextScene : MonoBehaviour {
 
 	public void LoadNextStepSceneHome ()
 	{
-		Application.LoadLevel ("main_menu_after_login_wt_fb");
+		Application.LoadLevel ("main_menu_before_login");
 	}
 
 	public void LoadNextStepSceneMenu ()
