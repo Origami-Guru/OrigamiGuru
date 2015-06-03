@@ -46,8 +46,8 @@ public class MainTrackableEventHandler : MonoBehaviour,
     public Texture[] selImage;
     private int selImgSize = 0;
     private int counter;
-    private GUIContent[] selContent;
-
+    private string[] urlArray;
+    private string[] modelNameArray;
     #endregion
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
@@ -64,7 +64,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
     void Update(){
         if(selGridInt != 0){
             
-            Debug.Log(selGridInt);
+            //Debug.Log(selGridInt);
         }
     }
 
@@ -127,31 +127,36 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleX = (float)(Screen.width)/600.0f;
         float scaleY = (float)(Screen.height)/1024.0f;
 
-        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));       
-
-        GUILayout.BeginVertical("Box");
+        GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
 
         if(modelDictionary.Count != 0){
             selImgSize = modelDictionary.Count;
-            Debug.Log("Size of Model Dictionary:  " + selImgSize);
         }
 
         //selection grid begins
         counter = 0;
         selImage = new Texture[selImgSize];
-        selContent = new GUIContent[selImgSize];
+        urlArray = new string[selImgSize];
+        modelNameArray = new string[selImgSize];
 
         foreach(KeyValuePair<string, string> md in modelDictionary){
             selImage[counter] =  Resources.Load<Texture>(md.Key);
-
-            Debug.Log("dictionary key: " + md.Key);
+            modelNameArray[counter] = md.Key;
+            urlArray[counter] = md.Value;
             counter += 1;
-        }
+        }       
 
-        selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle);
+        GUILayout.Label("You choose : " + modelNameArray[selGridInt] + " :)", fontStyle);
+        
+        GUILayout.BeginVertical("Box");
 
-        if (GUILayout.Button("Start"))
+
+        selGridInt = GUILayout.SelectionGrid(selGridInt, selImage, 2, gridviewStyle, GUILayout.MinHeight(300), GUILayout.MaxHeight(700));
+
+        if (GUILayout.Button("OK!", buttonStyle)){
             Debug.Log("You chose " + selImage[selGridInt]);
+            Application.LoadLevel(urlArray[selGridInt]);
+        }
         
         GUILayout.EndVertical();  
     }
@@ -162,11 +167,15 @@ public class MainTrackableEventHandler : MonoBehaviour,
         float scaleY = (float)(Screen.height)/1024.0f;
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
+
         Rect WindowRect = new Rect(50, 200, 600,800);
+
+        Rect WindowRect = new Rect(50, 150, 500, 800);
+
         
         //This is only shown when the user point the camera to the origami paper. 
         if(foundedTarget == true && isChooseModel == false){
-            GUI.Window(1, WindowRect, chooseModelContent, "Please choose an origami model.", windowStyle);
+            GUI.Window(1, WindowRect, chooseModelContent, "", windowStyle);
         }
     }    
 }
