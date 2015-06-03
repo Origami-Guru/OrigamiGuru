@@ -168,8 +168,6 @@ public class MainTrackableEventHandler : MonoBehaviour,
 
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(scaleX, scaleY, 1));
 
-        Rect WindowRect = new Rect(50, 200, 600,800);
-
         Rect WindowRect = new Rect(50, 150, 500, 800);
 
         
