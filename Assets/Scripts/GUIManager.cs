@@ -18,6 +18,10 @@ public class GUIManager : MonoBehaviour {
     public GUIStyle cameraTipsStyle;
     public GUIStyle cameraTipsCloseButtStyle;
 
+    private string modelSceneName;
+    private Rect sharingButtonRect = new Rect(500, 920, 100, 100);
+    public GUIStyle shareButtonStyle;
+
 	#endregion
 
 	// Use this for initialization
@@ -46,5 +50,13 @@ public class GUIManager : MonoBehaviour {
             }
         }
 
+        modelSceneName = Application.loadedLevelName;
+
+        if(modelSceneName != null){
+            if(GUI.Button(sharingButtonRect, "", shareButtonStyle)){
+                SoomlaInitialize soomlaInitialize = new SoomlaInitialize();
+                soomlaInitialize.shareStory(modelSceneName);
+            }            
+        }
 	}
 }

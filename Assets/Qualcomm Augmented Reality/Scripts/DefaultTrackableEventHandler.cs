@@ -29,10 +29,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     private string modelSceneName;
     private GameObject targetObject;
     private SpriteRenderer[] modelImages;
+    private string congratulationImg;
 
     private bool showSuggestText = false;
     private bool showButtonNext = false;
     private bool showButtonBack = false;
+    private bool isComplete = false;
 
     public GUIStyle suggestTextStyle;
     public GUIStyle buttonNextStyle;
@@ -72,7 +74,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
                                     TrackableBehaviour.Status previousStatus,
                                     TrackableBehaviour.Status newStatus)
     {
-
         if (newStatus == TrackableBehaviour.Status.DETECTED ||
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
@@ -92,7 +93,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
-
 
     private void OnTrackingFound()
     {
@@ -114,7 +114,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
         targetFoundName = mTrackableBehaviour.TrackableName;
            
         getSuggestText(modelSceneName);
-        
     }
 
     private void OnTrackingLost()
@@ -184,9 +183,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
             modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
             
             if(GUI.Button(buttonNextRect, "", buttonNextStyle)){
-                foreach(SpriteRenderer modelimage in modelImages){
-                    Debug.Log("model image are " + modelimage);
-                }
                 modelImages[0].enabled = false;
                 modelImages[1].enabled = true;
                 showButtonNext = false;
@@ -199,21 +195,22 @@ public class DefaultTrackableEventHandler : MonoBehaviour,
             modelImages = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
             
             if(GUI.Button(buttonBackRect, "", buttonBackStyle)){
-                foreach(SpriteRenderer modelimage in modelImages){
-                    Debug.Log("model image are " + modelimage);
-                }
                 modelImages[0].enabled = true;
                 modelImages[1].enabled = false;
                 showButtonNext = true;
                 showButtonBack = false;
             }
-        }
+        }        
 
         if(showSuggestText == true){
             suggestText = getSuggestText(modelSceneName);
             GUI.Label(suggestTextRect, suggestText, suggestTextStyle);
         }
+
+
     }
+
+
 
     #endregion // PRIVATE_METHODS
 }
