@@ -52,7 +52,7 @@ public class GUIManager : MonoBehaviour {
 
         modelSceneName = Application.loadedLevelName;
 
-        if(modelSceneName != null){
+        if(modelSceneName != null && !(modelSceneName.Equals("main_camdetect"))){
             if(GUI.Button(sharingButtonRect, "", shareButtonStyle)){
                 SoomlaInitialize soomlaInitialize = new SoomlaInitialize();
                 soomlaInitialize.shareStory(modelSceneName);
