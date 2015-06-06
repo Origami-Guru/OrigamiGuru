@@ -96,4 +96,64 @@ public class GettingModels : MonoBehaviour {
 		Debug.Log("model dictionary " + ModelsDictionary);
 		return ModelsDictionary;
 	}
+
+	public bool getFinalStep(string currentSceneName, string targetFoundName){
+		Debug.Log("trying to get final step");
+		var stepParsed = JSON.Parse(stepJSON.text);
+		var modelParsed = JSON.Parse(modelJSON.text);
+		var modelStepParsed = JSON.Parse(modelStepJSON.text);
+
+		string stepNameOfSteps;
+		int stepIDOfSteps = 0;
+		int stepIdOfModelStep;
+		int modelIdOfModelStep;
+		int modelIdOfModel = 0;
+		string modelNameOfModel;
+		string modelSceneNameOfModel;
+
+		int numOfSteps;
+		int numOfModelSteps;
+		int numOfModels;
+
+		bool isComplete = false;
+
+		numOfSteps = stepParsed["steps"].Count;
+		numOfModelSteps = modelStepParsed["models_steps"].Count;
+		numOfModels = modelParsed["models"].Count;
+		
+		for(int i = 0; i < numOfSteps; i++){
+			stepNameOfSteps = stepParsed["steps"][i]["step_name"];
+
+			if(stepNameOfSteps.Equals(targetFoundName)){
+				stepIDOfSteps = stepParsed["steps"][i]["step_id"].AsInt;
+			}
+		}
+
+		for(int i = 0; i < numOfModels; i++){
+			modelSceneNameOfModel = modelParsed["models"][i]["model_scene_name"];
+
+			if(modelSceneNameOfModel.Equals(currentSceneName)){
+				modelIdOfModel = modelParsed["models"][i]["model_id"].AsInt;
+			}
+		}
+
+		if(stepIDOfSteps != 0 && modelIdOfModel != 0){
+			for(int i = 0; i < numOfModelSteps; i++){
+				stepIdOfModelStep = modelStepParsed["models_steps"][i]["step_id"].AsInt;
+				modelIdOfModelStep = modelStepParsed["models_steps"][i]["model_id"].AsInt;
+
+				if(stepIDOfSteps == stepIdOfModelStep && modelIdOfModel == modelIdOfModelStep){
+					isComplete = modelStepParsed["models_steps"][i]["is_complete"].AsBool;
+				}
+			}
+		}
+		if(isComplete){
+			Debug.Log("is final step");
+		}	
+		else{
+			Debug.Log("is  not final step");
+
+		}			
+		return isComplete;
+	}
 }

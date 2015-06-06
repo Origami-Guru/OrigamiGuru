@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Facebook\Editor\FacebookPostprocess.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Qualcomm Augmented Reality\Scripts\DefaultTrackableEventHandler.cs">
     <Files>
-      <File FileName="Assets\Facebook\Editor\FacebookPostprocess.cs" Line="51" Column="1" />
+      <File FileName="Assets\Scripts\MainTrackableEventHandler.cs" Line="161" Column="35" />
+      <File FileName="Assets\Scripts\LoadNextScene.cs" Line="440" Column="3" />
+      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\DefaultTrackableEventHandler.cs" Line="184" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

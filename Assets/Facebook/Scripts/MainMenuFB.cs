@@ -2,12 +2,18 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
+
 public class MainMenuFB : MonoBehaviour {
 	public GameObject UIFBLoggedIn;
 	public GameObject UIFBNotLoggedIn;
 	//public GameObject UIFBAvatar;
 	public GameObject UIFBUserName;
+	public Image buttonShare;
+	public GameObject UIFBUserNames;
 	private Dictionary<string, string> profile = null;
+
 	// Use this for initialization
 	
 	private void SetInit(){
@@ -39,10 +45,9 @@ public class MainMenuFB : MonoBehaviour {
 
 	public void FBLogin(){
 	            
-		FB.Login ("publish_actions", LoginCallback);                                                        
-		                                                                                                  
-		   
+		FB.Login ("email, publish_actions", LoginCallback);                                                                                                                                                             
 	}
+	
 	void LoginCallback(FBResult result)                                                        
 	{                                                                                          
 		Debug.Log("LoginCallback");                                                          
@@ -56,11 +61,13 @@ public class MainMenuFB : MonoBehaviour {
 		} else
 			Debug.Log ("FB loing Fail");
 			DealWithFBMenu(false);
-	}                                                                                          
+	}
+
 	void OnLoggedIn()                                                                          
 	{                                                                                          
-		Debug.Log("Logged in. ID: " + FB.UserId);                                            
-	}  
+		Debug.Log("Logged in. ID: " + FB.UserId);
+	} 
+
 	void DealWithFBMenu(bool IsLoggedIn){
 		if(IsLoggedIn){
 			UIFBLoggedIn.SetActive (false);
@@ -81,22 +88,43 @@ public class MainMenuFB : MonoBehaviour {
 		if (result.Error !=null) {
 			Debug.Log ("Problem with getting Username");
 			//FB.API(Util.GetPictureURL("me",128,128),Facebook.HttpMethod.GET,DealWithProfilePicture);
-			FB.API("/me?fields=id,first_name", Facebook.HttpMethod.GET, DealWithUsername);
+			FB.API("/me?fields=id,first_name,last_name", Facebook.HttpMethod.GET, DealWithUsername);
 			return;
-
 		}
+		
 		profile = Util.DeserializeJSONProfile(result.Text); 
 		Text Usermsg = UIFBUserName.GetComponent<Text> ();
-		Usermsg.text = "Helle," + profile ["first_name"];
+		Usermsg.text = "Welcome, " + profile ["first_name"]  + "\n to the new exiting experience \n of an Origami" ;
 	}
+
 	public void ShareWithFriends (){
+		TakeScreenshot();
 			FB.Feed(
 			linkCaption:"i'm OrigamiGuru",
-			picture:"https://photos-3.dropbox.com/t/2/AABN8t808wJxFo6cDi6c8L73y6xmjcAf182FaDJmnrQVWQ/12/22580284/jpeg/32x32/1/1432915200/0/2/pigeon_step_07_16.jpg/CLyY4gogASACIAMgBCAFIAYgBygBKAI/BEWaH1EVplmAs2e-iVlCxmyrzOV9C82mSvk2N-RIN0k?size=1024x768&size_mode=2",
-			link:"https://photos-3.dropbox.com/t/2/AABN8t808wJxFo6cDi6c8L73y6xmjcAf182FaDJmnrQVWQ/12/22580284/jpeg/32x32/1/1432915200/0/2/pigeon_step_07_16.jpg/CLyY4gogASACIAMgBCAFIAYgBygBKAI/BEWaH1EVplmAs2e-iVlCxmyrzOV9C82mSvk2N-RIN0k?size=1024x768&size_mode=2",
+			picture:"",
+			link:"",
 			linkName:"Test Application OrgamiGuRU ProJeCt",
 			callback: LoginCallback
 			);
 		
-		}
+	}
+
+	public IEnumerator TakeScreenshot() 
+	{
+	    yield return new WaitForEndOfFrame();
+
+	    var width = Screen.width;
+	    var height = Screen.height;
+	    var tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+	    // Read screen contents into the texture
+	    tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+	    tex.Apply();
+	    byte[] screenshot = tex.EncodeToPNG();
+
+	    var wwwForm = new WWWForm();
+	    wwwForm.AddBinaryData("image", screenshot, "cat.png");
+
+	    FB.API("me/photos", Facebook.HttpMethod.POST, LoginCallback, wwwForm);
+	    Debug.Log("try to share photo to facebook");
+	}
 }

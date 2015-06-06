@@ -481,6 +481,9 @@ public class LoadNextScene : MonoBehaviour {
 	{
 		Application.LoadLevel("main_manu_detect_2");
 	}
+	public void LoadAnyScene(string sceneName){
+		Application.LoadLevel(sceneName);
+	}
 
 
 

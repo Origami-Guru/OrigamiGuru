@@ -8805,14 +8805,194 @@
   //
    {
     "model_step_id":817,
-    "model_id":,
-    "step_id":437,
+    "model_id": 3,
+    "step_id":1,
     "is_complete":false,
-    "prev_step":419,
+    "prev_step":null,
     "next_step":null,
     "next_two_dimension_id":null,
     "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
   }, 
+  {
+    "model_step_id":818,
+    "model_id": 5,
+    "step_id":1,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+  },
+   {
+    "model_step_id":819,
+    "model_id": 6,
+    "step_id":1,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":820,
+    "model_id": 1,
+    "step_id":162,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":821,
+    "model_id": 1,
+    "step_id":163,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":822,
+    "model_id": 1,
+    "step_id":164,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":823,
+    "model_id": 1,
+    "step_id":165,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":824,
+    "model_id": 1,
+    "step_id":166,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":825,
+    "model_id": 1,
+    "step_id":167,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":826,
+    "model_id": 1,
+    "step_id":168,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":827,
+    "model_id": 1,
+    "step_id":169,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":828,
+    "model_id": 2,
+    "step_id":163,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":829,
+    "model_id": 2,
+    "step_id":164,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":830,
+    "model_id": 2,
+    "step_id":165,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":831,
+    "model_id": 2,
+    "step_id":162,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":833,
+    "model_id": 6,
+    "step_id":162,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":832,
+    "model_id": 6,
+    "step_id":163,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":834,
+    "model_id": 6,
+    "step_id":164,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+   {
+    "model_step_id":835,
+    "model_id": 6,
+    "step_id":165,
+    "is_complete":false,
+    "prev_step":null,
+    "next_step":null,
+    "next_two_dimension_id":null,
+    "description":"พับกระดาษตามลูกศรลงมา ให้เป็นส่วนของปากนก "
+  },
+
 
 ]
 }
