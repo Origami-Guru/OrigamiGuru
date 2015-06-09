@@ -146,7 +146,7 @@ public class MainTrackableEventHandler : MonoBehaviour,
             counter += 1;
         }       
 
-        GUILayout.Label("You choose : " + modelNameArray[selGridInt] + " :)", fontStyle);
+        GUILayout.Label("You chose : " + modelNameArray[selGridInt] + " :)", fontStyle);
         
         GUILayout.BeginVertical("Box");
 

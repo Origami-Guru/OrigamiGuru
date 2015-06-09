@@ -18,7 +18,7 @@ public class SoomlaInitialize : MonoBehaviour {
 		SoomlaProfile.UpdateStory(
 		    Provider.FACEBOOK,                          // Provider
 		    "Check out this great origami experience by Origami Guru! #OrigamiGuru #SWU",                       // Text of the story to post
-		    "Origami Guru is so lovely app :P",  // Name
+		    "Origami Guru App is so lovely! :P",  // Name
 		    "Origami Guru is growing!!",                            // Caption
 		    "Origami Guru",                     // Description
 		    "https://www.facebook.com/origamiguruswu",            // Link to post
